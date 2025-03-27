@@ -1,0 +1,16 @@
+name: flutter_interview_questions
+description: A list of Dart and Flutter interview questions.
+repository: https://github.com/thisissandipp/flutter-interview-questions
+issue_tracker: https://github.com/thisissandipp/flutter-interview-questions/issues
+homepage: https://github.com/thisissandipp/flutter-interview-questions
+
+version: 1.0.0
+
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+
+dependencies:
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^5.0.0

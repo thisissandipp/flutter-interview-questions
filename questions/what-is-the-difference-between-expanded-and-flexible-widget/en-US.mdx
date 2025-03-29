@@ -1,0 +1,25 @@
+---
+title: What is the difference between `Expanded` and `Flexible` widget?
+---
+
+The only difference between these two widgets is the `Flexible` widget takes only the space needed by the child, whereas the `Expanded` widget enforces its child to take all the available space.
+
+The `Expanded` widget in flutter is shorthand of `Flexible` with the fit set to **FlexFit. tight**.
+
+```dart
+Column(children: [
+  Row(
+    children: [_ExpandedWidget(), _FlexibleWidget()],
+  ),
+  Row(
+    children: [_ExpandedWidget(), _ExpandedWidget()],
+  ),
+  Row(
+    children: [_FlexibleWidget(), _FlexibleWidget()],
+  ),
+]),
+```
+
+<p align="center">
+  <img src="assets/expanded_vs_flexible.PNG" alt="Expanded vs Flexible" width="800px" />
+</p>

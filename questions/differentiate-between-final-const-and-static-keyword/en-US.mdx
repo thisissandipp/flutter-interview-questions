@@ -1,0 +1,11 @@
+---
+title: Differentiate between final, const and static keyword.
+---
+
+The `final` keyword defines a variable that can be initialized once and cannot be changed after being assigned a value for the first time.
+
+The `const` keyword defines a constant variable that should not be changed over time.
+
+Now the only difference between the final and const variable is that **final is a runtime-constant**, which in turn means that its value can be assigned at runtime instead of the compile-time that we had for the const keyword.
+
+The `static` keyword is used for a class-level variable and method that is the same for every instance of a class, this means if a data member is static, it can be accessed without creating an object. The static keyword allows data members to persist Values between different instances of a class.

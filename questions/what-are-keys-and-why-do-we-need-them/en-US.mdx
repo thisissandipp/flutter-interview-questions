@@ -1,0 +1,9 @@
+---
+title: What are keys and why do we need them?
+---
+
+Flutter uses keys to preserve the state and to uniquely identify specific widgets within a widget tree. It is used to preserve the state of the `StatefulWidget`s while they are being replaced with other widgets or just moved in the widget tree.
+
+The most common usage of key is when we are dealing with collections of widgets that have the same type; so, without keys, the element tree would not know which state corresponds to which widget, as they would all have the same type.
+
+For an explanation with an example, check this [stackoverflow answer](https://stackoverflow.com/a/50081052).

@@ -1,0 +1,12 @@
+---
+title: Differentiate between named parameters and positional parameters in Flutter.
+---
+
+A `Positional Parameter` is linked by its position. Positional parameters must be specified in the order in which they appear. `Named Parameters` are referenced by name, which means that they can be used during the function invocation in an order different from the function declaration.
+
+To declare a positional optional parameter, we use square brackets `[ ]`, whereas to declare a named optional parameters we use curly braces `{ }`.
+
+```dart
+doSomething(String name, [String greeting = 'Hello']); // Positional Optional Parameter
+doSomething({String? name, String greeting = 'Hello'}); // Named Optional Parameter
+```

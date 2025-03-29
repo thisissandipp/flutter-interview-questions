@@ -1,0 +1,23 @@
+---
+title: What is Fat Arrow Notation in Dart?
+---
+
+A fat arrow (=>) is used to define a single expression in a function. This is a cleaner way to write functions with a single statement.
+
+Syntax:
+
+```
+ReturnType FunctionName(Params) => Expression;
+```
+
+Example:
+
+```dart
+// Without fat arrow notation
+String findSquare(int n) {
+  return 'The square of $n is ${n * n}.';
+}
+
+// With fat arrow notation
+String findSquare(int n) => 'The square of $n is ${n * n}.';
+```

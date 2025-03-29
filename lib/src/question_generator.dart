@@ -10,8 +10,7 @@ class QuestionGenerator {
   static final Directory questionsDir = Directory(path.join('.', 'questions'));
 
   /// The auto-generated README file location.
-  // TODO(thisissandipp): This file should be pointing to the root README.md file.
-  static final File genReadmeFile = File(path.join('.', 'gen', 'README.md'));
+  static final File genReadmeFile = File(path.join('.', 'README.md'));
 
   // Github organization name and repository names for generating edit links.
   static const String kGithubOrg = 'thisissandipp';

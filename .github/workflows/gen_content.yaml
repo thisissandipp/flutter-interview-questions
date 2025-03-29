@@ -17,7 +17,7 @@ jobs:
         uses: dart-lang/setup-dart@v1
 
       - name: 📦 Install Dependencies
-        run: dart pub get --no-example'
+        run: dart pub get --no-example
 
       - name: ⚙️ Run Scripts
         run: dart run

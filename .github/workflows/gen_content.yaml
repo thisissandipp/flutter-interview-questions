@@ -1,0 +1,37 @@
+name: Generate Contents
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  gen-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v4
+
+      - name: 🎯 Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: 📦 Install Dependencies
+        run: dart pub get --no-example'
+
+      - name: ⚙️ Run Scripts
+        run: dart run
+
+      - name: Commit Changes (if required)
+        run: |
+          if ! git diff --quiet README.md; then
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git config user.name "GitHub Actions [Bot]"
+            git add README.md
+            git commit -m "[auto] generate readme contents"
+            git push
+            echo "[info] README Contents updated and committed."
+          else
+            echo "[info] No changes to README Contents."
+          fi
+        working-directory: ${{ github.workspace }}

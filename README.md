@@ -91,6 +91,26 @@ This list contains common Flutter interview questions and their answers. From ba
 | 78 | [What is State Management in Flutter?](#what-is-state-management-in-flutter) | Intermediate |
 | 79 | [What is the difference between Cupertino and Material Design in Flutter?](#what-is-the-difference-between-cupertino-and-material-design-in-flutter) | Easy |
 | 80 | [What is the purpose of the Material Design Icons package in Flutter?](#what-is-the-purpose-of-the-material-design-icons-package-in-flutter) | Easy |
+| 81 | [Explain how you will deploy a Flutter app to the Google Play/App Store?](#explain-how-you-will-deploy-a-flutter-app-to-the-google-playapp-store) | Advanced |
+| 82 | [What are the advantages of a Flutter Inspector?](#what-are-the-advantages-of-a-flutter-inspector) | Advanced |
+| 83 | [List the responsibilities of `FlutterActivity`.](#list-the-responsibilities-of-flutteractivity) | Advanced |
+| 84 | [Can you describe how to implement internationalization in a flutter app?](#can-you-describe-how-to-implement-internationalization-in-a-flutter-app) | Advanced |
+| 85 | [How do you implement a custom transition between screens in flutter?](#how-do-you-implement-a-custom-transition-between-screens-in-flutter) | Advanced |
+| 86 | [How do you implement a custom animation curve in flutter?](#how-do-you-implement-a-custom-animation-curve-in-flutter) | Advanced |
+| 87 | [How do you implement a draggable widget in flutter?](#how-do-you-implement-a-draggable-widget-in-flutter) | Intermediate |
+| 88 | [How do you provide accessibility when developing flutter apps, do you at all?](#how-do-you-provide-accessibility-when-developing-flutter-apps-do-you-at-all) | Intermediate |
+| 89 | [How to create a list with persistent headers?](#how-to-create-a-list-with-persistent-headers) | Intermediate |
+| 90 | [Can you communicate between isolates? Describe an Isolate?](#can-you-communicate-between-isolates-describe-an-isolate) | Advanced |
+| 91 | [Explain what a ticker is in flutter.](#explain-what-a-ticker-is-in-flutter) | Intermediate |
+| 92 | [What are the various kinds of Streams present in flutter?](#what-are-the-various-kinds-of-streams-present-in-flutter) | Intermediate |
+| 93 | [What is the Flutter rendering pipeline and how does it work?](#what-is-the-flutter-rendering-pipeline-and-how-does-it-work) | Advanced |
+| 94 | [What is the role of the `FlutterEngine` in the Flutter framework?](#what-is-the-role-of-the-flutterengine-in-the-flutter-framework) | Advanced |
+| 95 | [What are platform channels in Flutter and when would you use them?](#what-are-platform-channels-in-flutter-and-when-would-you-use-them) | Advanced |
+| 96 | [How do you work with multiple Flutter flavors?](#how-do-you-work-with-multiple-flutter-flavors) | Advanced |
+| 97 | [What is code-splitting in Flutter, and how does it help?](#what-is-code-splitting-in-flutter-and-how-does-it-help) | Advanced |
+| 98 | [What are the differences between JIT and AOT?](#what-are-the-differences-between-jit-and-aot) | Intermediate |
+| 99 | [How do Object, dynamic, and var differ in Dart?](#how-doobjectdynamic-andvardiffer-in-dart) | Easy |
+| 100 | [How do mixins differ from interfaces in Dart?](#how-do-mixins-differ-from-interfaces-in-dart) | Intermediate |
 
 <!-- QUESTIONS:TOC:END -->
 
@@ -2312,6 +2332,659 @@ Overall, the Material Design Icons package is a useful resource for Flutter deve
 
 <br>
       
+### Explain how you will deploy a Flutter app to the Google Play/App Store?
+      
+<!-- Update here: /questions/explain-how-you-will-deploy-a-flutter-app-to-the-google-playapp-store/en-US.mdx -->
+
+To deploy a Flutter app to the Google Play Store or App Store, follow these steps while adhering to their respective guidelines on content, user privacy, and design:
+
+**Deploying to Google Play Store:**
+- Google Play Developer Account: Create an account and set it up.
+- Generate a Signing Key: Sign your app for secure distribution.
+- Prepare App Configuration: Update build.gradle with package details and versioning.
+- Build the Release APK or AAB: Run flutter build apk or flutter build appbundle.
+- Upload and Submit: Submit the app via the Play Console, including screenshots and metadata.
+- Review and Publish: Wait for approval, then publish.
+
+**Deploying to App Store:**
+- Apple Developer Account: Enroll and set up your account.
+- Provisioning Profile & Certificate: Use Xcode to create a signing certificate and provision your app.
+- Prepare App Configuration: Update your app's bundle ID and version.
+- Build the iOS Archive: Run flutter build ios and export the archive using Xcode.
+- Submit and Review: Upload the app via Xcode or Transporter, fill out metadata, and submit for review.
+- Publish: Once approved, your app goes live.
+
+Ensure you test the app thoroughly and address any guidelines to streamline the approval process.
+- [Google Play Store Guildelines](https://play.google.com/console/about/guides/releasewithconfidence/)
+- [Apple App Review Guildelines](https://developer.apple.com/app-store/review/guidelines/)
+
+<!-- Update here: /questions/explain-how-you-will-deploy-a-flutter-app-to-the-google-playapp-store/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/explain-how-you-will-deploy-a-flutter-app-to-the-google-playapp-store/en-US.mdx)
+
+<br>
+      
+### What are the advantages of a Flutter Inspector?
+      
+<!-- Update here: /questions/what-are-the-advantages-of-a-flutter-inspector/en-US.mdx -->
+
+The Flutter Inspector provides several key features that help developers debug and optimize their applications:
+
+1. **Select Widget Mode:** Allows you to choose a widget directly from the app on your device to inspect its properties. This is useful for understanding how each widget behaves in the layout (source: Flutter Docs).
+
+2. **Refresh Tree:** After hot reloading, the widget tree in the inspector may not immediately update. Clicking Refresh Tree reloads the widget information to reflect the latest changes (source: Flutter Docs).
+
+3. **Slow Animations:** Slows down the animation speed by a factor of 5, allowing you to fine-tune and observe animations more clearly (source: Flutter Docs).
+
+4. **Show Guidelines:** Overlays layout guidelines on your screen to help fix layout issues and ensure consistent UI design (source: Flutter Docs).
+
+5. **Show Baselines:** Displays baselines used to align text, which is helpful for checking proper text alignment within the UI (source: Flutter Docs).
+
+6. **Highlight Repaints:** Highlights areas of the screen that repaint, with borders changing colors. This helps you identify unnecessary repaints that may be affecting performance (source: Flutter Docs).
+
+7. **Highlight Oversized Images:** Highlights images that consume too much memory by inverting their colors and flipping them, guiding you to optimize image sizes for better performance (source: Flutter Docs).
+
+These tools enhance the debugging process and improve the performance of your Flutter app by providing in-depth visual feedback during development.
+
+<!-- Update here: /questions/what-are-the-advantages-of-a-flutter-inspector/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-are-the-advantages-of-a-flutter-inspector/en-US.mdx)
+
+<br>
+      
+### List the responsibilities of `FlutterActivity`.
+      
+<!-- Update here: /questions/list-the-responsibilities-of-flutteractivity/en-US.mdx -->
+
+`FlutterActivity` is the simplest and most direct way to integrate Flutter within an Android app.
+
+`FlutterActivity` maintains the following responsibilities:
+
+- Displays an Android launch screen.
+- Configures the status bar appearance.
+- Chooses the Dart execution app bundle path, entrypoint and entrypoint arguments.
+- Chooses Flutter's initial route.
+- Renders Activity transparently, if desired.
+- Offers hooks for subclasses to provide and configure a `FlutterEngine`.
+- Save and restore instance state.
+
+Learn more about [FlutterActivitiy](https://api.flutter.dev/javadoc/io/flutter/embedding/android/FlutterActivity.html).
+
+<!-- Update here: /questions/list-the-responsibilities-of-flutteractivity/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/list-the-responsibilities-of-flutteractivity/en-US.mdx)
+
+<br>
+      
+### Can you describe how to implement internationalization in a flutter app?
+      
+<!-- Update here: /questions/can-you-describe-how-to-implement-internationalization-in-a-flutter-app/en-US.mdx -->
+
+To implement internationalization (i18n) in a Flutter app:
+
+- Include the `flutter_localizations` package in the `pubspec.yaml` file.
+- Set the `localizationsDelegates` and `supportedLocales` properties in the MaterialApp.
+- Use .arb files to store translations for different locales (e.g., app_en.arb for English, app_es.arb for Spanish).
+- Use the flutter `gen-l10n` tool to generate Dart localization classes from the .arb files.
+- Use the generated localization class (e.g., `AppLocalizations.of(context).<key>`) to access translated strings.
+- Test the app by switching locales in device settings and updating .arb files as needed.
+
+<!-- Update here: /questions/can-you-describe-how-to-implement-internationalization-in-a-flutter-app/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/can-you-describe-how-to-implement-internationalization-in-a-flutter-app/en-US.mdx)
+
+<br>
+      
+### How do you implement a custom transition between screens in flutter?
+      
+<!-- Update here: /questions/how-do-you-implement-a-custom-transition-between-screens-in-flutter/en-US.mdx -->
+
+To implement a custom transition between screens in flutter:
+
+- Use `PageRouteBuilder` to define the transition animations.
+- In the `pageBuilder`, define the widget for the new screen and use `Animation` objects to control the transition.
+- In the `transitionsBuilder`, use Flutter's animation widgets like `FadeTransition`, `SlideTransition`, or custom combinations to animate the transition.
+- Pass the `PageRouteBuilder` to the `Navigator.push` method.
+
+```dart
+Navigator.push(
+  context,
+  PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => NewScreen(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      final begin = Offset(1.0, 0.0);
+      final end = Offset.zero;
+      final tween = Tween(begin: begin, end: end);
+      final offsetAnimation = animation.drive(tween);
+
+      return SlideTransition(position: offsetAnimation, child: child);
+    },
+  ),
+);
+```
+
+<!-- Update here: /questions/how-do-you-implement-a-custom-transition-between-screens-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-implement-a-custom-transition-between-screens-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you implement a custom animation curve in flutter?
+      
+<!-- Update here: /questions/how-do-you-implement-a-custom-animation-curve-in-flutter/en-US.mdx -->
+
+To implement a custom animation curve in Flutter:
+
+- Create a custom class that extends `Curve` and override the `transform` method to define the curve's behavior.
+- Apply the custom curve in an `Animation` object using `CurvedAnimation`.
+
+```dart
+class CustomCurve extends Curve {
+  @override
+  double transform(double t) {
+    // Example: Ease-in-out quadratic curve
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+}
+
+final animation = CurvedAnimation(
+  parent: controller,
+  curve: CustomCurve(),
+);
+```
+
+<!-- Update here: /questions/how-do-you-implement-a-custom-animation-curve-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-implement-a-custom-animation-curve-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you implement a draggable widget in flutter?
+      
+<!-- Update here: /questions/how-do-you-implement-a-draggable-widget-in-flutter/en-US.mdx -->
+
+To implement a draggable widget in flutter, use the `Draggable` widget. Here's how to do it:
+
+- Use the `Draggable` widget to wrap the element you want to make draggable.
+- Pass the data you want to drag through the data property.
+- Use `feedback` to specify the widget that appears while dragging and `childWhenDragging` for the widget that replaces the original widget during the drag.
+
+```dart
+Draggable<int>(
+  data: 1,
+  feedback: Material(
+    color: Colors.transparent,
+    child: Icon(Icons.access_alarm, size: 50),
+  ),
+  childWhenDragging: Container(),
+  child: Icon(Icons.access_alarm),
+)
+```
+
+In this example, when the user starts dragging the icon, it shows a smaller icon as the feedback. The original icon disappears until the drag ends.
+
+<!-- Update here: /questions/how-do-you-implement-a-draggable-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-implement-a-draggable-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you provide accessibility when developing flutter apps, do you at all?
+      
+<!-- Update here: /questions/how-do-you-provide-accessibility-when-developing-flutter-apps-do-you-at-all/en-US.mdx -->
+
+Yes, accessibility is a critical aspect of Flutter app development to ensure that the app is usable by everyone, including users with disabilities. In Flutter, several techniques are available to enhance accessibility:
+
+- **Use of Semantic Widgets:** Flutter provides `Semantics` widget, which allows you to annotate elements in the UI with meaningful descriptions. This helps screen readers understand what the widget represents and provides a better experience for visually impaired users.
+
+```dart
+Semantics(
+  label: 'Submit button',
+  child: ElevatedButton(onPressed: () {}, child: Text('Submit')),
+);
+```
+
+- **Text Accessibility:** Ensure that text content is readable by screen readers. This can be achieved by using accessible widgets like `Text` with clear, concise content and by applying the correct `semanticsLabel` for any custom widgets.
+
+- **Color Contrast:** Ensure sufficient contrast between text and background colors to assist users with visual impairments. Tools like Flutter's accessibility library can help check for contrast issues.
+
+- **Focus Management:** Implementing keyboard navigation and focus management is essential for users with motor disabilities. Flutter provides `FocusNode` and `FocusScope` to manage focus behavior.
+
+- **Custom Actions for Screen Readers:** For custom interactions like gestures or animations, use the `excludeSemantics` property wisely to avoid unnecessary verbosity and ensure that screen readers only announce relevant actions.
+
+- **Testing:** Test your app with accessibility tools like the built-in Android TalkBack or iOS VoiceOver to ensure that all elements are accessible.
+
+By using these techniques and Flutter's built-in tools, we can create more inclusive and accessible apps.
+
+<!-- Update here: /questions/how-do-you-provide-accessibility-when-developing-flutter-apps-do-you-at-all/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-provide-accessibility-when-developing-flutter-apps-do-you-at-all/en-US.mdx)
+
+<br>
+      
+### How to create a list with persistent headers?
+      
+<!-- Update here: /questions/how-to-create-a-list-with-persistent-headers/en-US.mdx -->
+
+To create a list with persistent headers in flutter, we can use the `CustomScrollView` widget along with `SliverList` and `SliverPersistentHeader`. This allows to have headers that remain visible as the user scrolls through the list.
+
+Here's how to do it:
+- Wrap the list and header in a `CustomScrollView` to enable scrolling and custom behaviors.
+- The `SliverPersistentHeader` widget allows to create a header that can remain fixed or scroll away as the user scrolls the list.
+- Inside `SliverPersistentHeader`, we can define the header's appearance, and we can also control whether it stays fixed or scrolls away.
+
+```dart
+class PersistentHeaderList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverPersistentHeader(
+            delegate: _MyPersistentHeaderDelegate(),
+            pinned: true, // Makes the header sticky
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return ListTile(title: Text('Item $index'));
+              },
+              childCount: 100,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MyPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  @override
+  double get maxExtent => 100.0;
+  @override
+  double get minExtent => 60.0;
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Colors.blue,
+      child: Text('Persistent Header'),
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+}
+```
+
+<!-- Update here: /questions/how-to-create-a-list-with-persistent-headers/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-to-create-a-list-with-persistent-headers/en-US.mdx)
+
+<br>
+      
+### Can you communicate between isolates? Describe an Isolate?
+      
+<!-- Update here: /questions/can-you-communicate-between-isolates-describe-an-isolate/en-US.mdx -->
+
+Yes, you can communicate between isolates in Dart using message passing via `SendPort` and `ReceivePort`. Isolates do not share memory, and each isolate has its own memory space and event loop. To communicate, one isolate sends messages to another through a `SendPort`, and the receiving isolate listens on a `ReceivePort`.
+
+**Isolate:**
+An Isolate is a separate thread of execution in Dart that runs independently, using its own memory and event loop. It's useful for performing concurrent tasks without blocking the main isolate, which is critical for Flutter apps to keep the UI responsive.
+
+```dart
+import 'dart:isolate';
+
+void main() async {
+  // Create a receive port to listen for messages from the isolate
+  final receivePort = ReceivePort();
+
+  // Spawn an isolate and send the receive port's sendPort to it
+  await Isolate.spawn(isolateFunction, receivePort.sendPort);
+
+  // Listen for messages from the isolate
+  receivePort.listen((message) {
+    print('Received message: $message');
+    receivePort.close(); // Close the receive port when done
+  });
+}
+
+// Function to be executed by the isolate
+void isolateFunction(SendPort sendPort) {
+  sendPort.send('Hello from the isolate!');
+}
+```
+
+<!-- Update here: /questions/can-you-communicate-between-isolates-describe-an-isolate/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/can-you-communicate-between-isolates-describe-an-isolate/en-US.mdx)
+
+<br>
+      
+### Explain what a ticker is in flutter.
+      
+<!-- Update here: /questions/explain-what-a-ticker-is-in-flutter/en-US.mdx -->
+
+In Flutter, a ticker is a mechanism that helps to drive animations. It provides a continuous stream of time, essentially ticking at a fixed interval (typically the frame rate). This enables the animation framework to update the UI at a consistent rate.
+
+A `Ticker` is often used with `AnimationController`, which is responsible for controlling the animation's progress over time. The Ticker's job is to notify the animation controller every frame so that it can update the animation’s state, which in turn updates the UI.
+
+```dart
+class MyAnimatedWidget extends StatefulWidget {
+  @override
+  _MyAnimatedWidgetState createState() => _MyAnimatedWidgetState();
+}
+
+class _MyAnimatedWidgetState extends State<MyAnimatedWidget> with TickerProviderStateMixin {
+  late Ticker _ticker;
+
+  @override
+  void initState() {
+    super.initState();
+    _ticker = createTicker((elapsed) {
+      print('Time elapsed: $elapsed');
+    });
+    _ticker.start();  // Starts the ticker
+  }
+
+  @override
+  void dispose() {
+    _ticker.dispose(); // Clean up the ticker
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+```
+
+<!-- Update here: /questions/explain-what-a-ticker-is-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/explain-what-a-ticker-is-in-flutter/en-US.mdx)
+
+<br>
+      
+### What are the various kinds of Streams present in flutter?
+      
+<!-- Update here: /questions/what-are-the-various-kinds-of-streams-present-in-flutter/en-US.mdx -->
+
+Streams in flutter are of two main types:
+
+**Single Subscription Stream**
+- Allows a single listener to subscribe at a time.
+- Suitable for sequential data processing, like events or user input.
+- Commonly used in situations like button clicks or network requests.
+
+**Broadcast Stream**
+
+- Allows multiple listeners to subscribe simultaneously.
+- Ideal for scenarios where the same data needs to be shared across multiple listeners.
+- Often used for shared events, like a global notification system.
+
+<!-- Update here: /questions/what-are-the-various-kinds-of-streams-present-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-are-the-various-kinds-of-streams-present-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the Flutter rendering pipeline and how does it work?
+      
+<!-- Update here: /questions/what-is-the-flutter-rendering-pipeline-and-how-does-it-work/en-US.mdx -->
+
+The Flutter rendering pipeline is the process through which Flutter converts UI code into pixels on the screen. It has the following stages:
+
+1. **UI Widgets:** The Flutter app starts with the widget tree, where you define the structure of your UI. This tree is immutable.
+2. **Element Tree:** The widget tree is transformed into the element tree, which is mutable and holds the state and structure of the app.
+3. **Render Tree:** The element tree builds a render tree, which describes the layout and paint information of each widget.
+4. **Layout Phase:** In this phase, the size and position of each widget in the render tree are calculated. Parent widgets pass constraints to child widgets to determine their dimensions.
+5. **Painting Phase:** Once layout calculations are complete, the render tree generates painting commands for each widget.
+6. **Compositing:** Flutter combines painting layers into a single visual representation. This step optimizes rendering by batching layers.
+7. **Rasterization:** The Skia engine takes the composited layers and converts them into actual pixels to display on the screen.
+8. **GPU Rendering:** Finally, the GPU renders the rasterized content onto the device screen.
+
+<!-- Update here: /questions/what-is-the-flutter-rendering-pipeline-and-how-does-it-work/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-flutter-rendering-pipeline-and-how-does-it-work/en-US.mdx)
+
+<br>
+      
+### What is the role of the `FlutterEngine` in the Flutter framework?
+      
+<!-- Update here: /questions/what-is-the-role-of-the-flutterengine-in-the-flutter-framework/en-US.mdx -->
+
+The Flutter Engine is a portable runtime for hosting Flutter applications. It implements Flutter's core libraries, including animation and graphics, file and network I/O, accessibility support, plugin architecture, and a Dart runtime and compile toolchain. It:
+
+- Executes Dart code in a separate isolate.
+- Manages the rendering pipeline via the Skia engine.
+- Facilitates communication between Flutter and native code through platform channels.
+- Handles plugin integration and app lifecycle events.
+
+<!-- Update here: /questions/what-is-the-role-of-the-flutterengine-in-the-flutter-framework/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-role-of-the-flutterengine-in-the-flutter-framework/en-US.mdx)
+
+<br>
+      
+### What are platform channels in Flutter and when would you use them?
+      
+<!-- Update here: /questions/what-are-platform-channels-in-flutter-and-when-would-you-use-them/en-US.mdx -->
+
+Platform channels in Flutter enable communication between Flutter’s Dart code and the host platform's native code (e.g., Java/Kotlin on Android or Swift/Objective-C on iOS). They are used when you need to access platform-specific APIs or features not directly available in Flutter.
+
+When to use them:
+
+- Accessing device hardware (camera, GPS, sensors).
+- Using platform-specific libraries or SDKs.
+- Integrating native functionality like notifications or background services.
+
+Example:
+Using a platform channel to get the battery level:
+
+```dart
+// Dart (Flutter)
+const platform = MethodChannel('samples.flutter.dev/battery');
+final batteryLevel = await platform.invokeMethod('getBatteryLevel');
+```
+
+```java
+// Android (Native)
+new MethodChannel(getFlutterEngine().getDartExecutor().getBinaryMessenger(), "samples.flutter.dev/battery")
+    .setMethodCallHandler((call, result) -> {
+        if (call.method.equals("getBatteryLevel")) {
+            int batteryLevel = getBatteryLevel(); // Native method
+            result.success(batteryLevel);
+        } else {
+            result.notImplemented();
+        }
+    });
+```
+
+<!-- Update here: /questions/what-are-platform-channels-in-flutter-and-when-would-you-use-them/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-are-platform-channels-in-flutter-and-when-would-you-use-them/en-US.mdx)
+
+<br>
+      
+### How do you work with multiple Flutter flavors?
+      
+<!-- Update here: /questions/how-do-you-work-with-multiple-flutter-flavors/en-US.mdx -->
+
+To work with multiple Flutter flavors, follow these steps:
+
+- Define flavors in android/app/build.gradle, add `productFlavors` like dev, staging, and prod with unique `applicationId`s.
+- Set up iOS schemes, create new schemes and configuration files in Xcode for each flavor.
+- Use Dart entry points, create separate main_dev.dart, main_prod.dart, etc., for flavor-specific logic.
+
+Run/build with flavor: Use --flavor and -t flags:
+
+```sh
+flutter run --flavor dev -t lib/main_dev.dart
+flutter build apk --flavor prod -t lib/main_prod.dart
+```
+
+<!-- Update here: /questions/how-do-you-work-with-multiple-flutter-flavors/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-work-with-multiple-flutter-flavors/en-US.mdx)
+
+<br>
+      
+### What is code-splitting in Flutter, and how does it help?
+      
+<!-- Update here: /questions/what-is-code-splitting-in-flutter-and-how-does-it-help/en-US.mdx -->
+
+In Flutter, code-splitting refers to dividing your app's code into smaller, independent modules that can be loaded on demand, rather than loading the entire app at once. This technique is typically used with deferred components or dynamic libraries.
+
+**Benefits:**
+- Reduced initial load time, only essential parts of the app are loaded upfront, improving performance.
+- Optimized memory usage, non-essential features remain unloaded until needed.
+- Improved user experience, faster startup and efficient navigation.
+
+**How it helps:**
+For example, in large Flutter apps, you can defer loading less frequently used features, like onboarding screens or admin dashboards, using tools like deferred components in Android or iOS.
+
+In practice, it enhances scalability and performance, especially in apps with extensive functionality.
+
+<!-- Update here: /questions/what-is-code-splitting-in-flutter-and-how-does-it-help/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-code-splitting-in-flutter-and-how-does-it-help/en-US.mdx)
+
+<br>
+      
+### What are the differences between JIT and AOT?
+      
+<!-- Update here: /questions/what-are-the-differences-between-jit-and-aot/en-US.mdx -->
+
+JIT stands for Just-in-Time vs AOT stands for Ahead-of-Time.
+
+- JIT compiles code during runtime. Used in development (e.g., hot reload) but has slower performance.
+- AOT compiles code before runtime (during build). Used in production for faster performance and optimized binary size.
+
+Key Differences:
+
+- JIT is slower, smaller binary, errors at runtime.
+- AOT is faster, larger binary, errors at compile-time.
+
+In Flutter, JIT is used in debug mode, and AOT is used in release mode for optimized apps.
+
+<!-- Update here: /questions/what-are-the-differences-between-jit-and-aot/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-are-the-differences-between-jit-and-aot/en-US.mdx)
+
+<br>
+      
+### How do Object, dynamic, and var differ in Dart?
+      
+<!-- Update here: /questions/how-doobjectdynamic-andvardiffer-in-dart/en-US.mdx -->
+
+In Dart, Object, dynamic, and var are used for variable declarations but differ in how types are handled:
+
+**Object:** The base class for all types in Dart. Variables declared as Object can hold any type of value, but you need to explicitly cast them when accessing methods or properties specific to that type.
+
+```dart
+Object obj = "Hello";
+```
+
+**dynamic:** Allows any type, similar to Object, but without the need for casting. At runtime, the type is resolved dynamically, and any method or property can be accessed without compile-time checks.
+
+```dart
+dynamic obj = "Hello"; // obj.length; (no type safety, but flexible)
+```
+
+**var:** Inferred type based on the assigned value. The type is determined at compile time and is fixed for the variable after assignment.
+
+```dart
+var obj = "Hello"; // (obj is inferred as String)
+```
+
+<!-- Update here: /questions/how-doobjectdynamic-andvardiffer-in-dart/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-doobjectdynamic-andvardiffer-in-dart/en-US.mdx)
+
+<br>
+      
+### How do mixins differ from interfaces in Dart?
+      
+<!-- Update here: /questions/how-do-mixins-differ-from-interfaces-in-dart/en-US.mdx -->
+
+In Dart, mixins and interfaces serve different purposes:
+
+**Mixins:** Allow a class to reuse code from multiple classes without using inheritance. Mixins are typically used to add functionality to a class. They are declared using the mixin keyword and can be applied to a class via the with keyword. A class can apply multiple mixins.
+
+```dart
+mixin Walker {
+  void walk() => print("Walking");
+}
+
+class Person with Walker {
+  // Person can now use the walk() method
+}
+```
+
+**Interfaces:** Define a contract that a class must adhere to. In Dart, all classes implicitly act as interfaces. To implement an interface, a class uses the implements keyword. Unlike mixins, interfaces do not allow code reuse—they only define method signatures that must be implemented.
+
+```dart
+class Animal {
+  void eat();
+}
+
+class Dog implements Animal {
+  @override
+  void eat() => print("Dog eating");
+}
+```
+
+**Key Differences:**
+- Mixins provide code reuse; can be used with multiple classes.
+- Interfaces define required methods, but no code reuse. A class can implement multiple interfaces.
+
+<!-- Update here: /questions/how-do-mixins-differ-from-interfaces-in-dart/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-mixins-differ-from-interfaces-in-dart/en-US.mdx)
+
+<br>
+      
 
 <!-- QUESTIONS:ALL:END -->
 
@@ -2362,6 +3035,7 @@ Flutter Interview Questions categorized by difficulty.
 37. [What is the purpose of the `FittedBox` widget in Flutter?](#what-is-the-purpose-of-the-fittedbox-widget-in-flutter)
 38. [What is the difference between Cupertino and Material Design in Flutter?](#what-is-the-difference-between-cupertino-and-material-design-in-flutter)
 39. [What is the purpose of the Material Design Icons package in Flutter?](#what-is-the-purpose-of-the-material-design-icons-package-in-flutter)
+40. [How do Object, dynamic, and var differ in Dart?](#how-doobjectdynamic-andvardiffer-in-dart)
 
 <!-- QUESTIONS:EASY:END -->
 
@@ -2403,6 +3077,13 @@ Flutter Interview Questions categorized by difficulty.
 32. [What is the purpose of the `AnimatedBuilder` widget in Flutter?](#what-is-the-purpose-of-the-animatedbuilder-widget-in-flutter)
 33. [What is the purpose of the `AnimatedSwitcher` widget in Flutter?](#what-is-the-purpose-of-the-animatedswitcher-widget-in-flutter)
 34. [What is State Management in Flutter?](#what-is-state-management-in-flutter)
+35. [How do you implement a draggable widget in flutter?](#how-do-you-implement-a-draggable-widget-in-flutter)
+36. [How do you provide accessibility when developing flutter apps, do you at all?](#how-do-you-provide-accessibility-when-developing-flutter-apps-do-you-at-all)
+37. [How to create a list with persistent headers?](#how-to-create-a-list-with-persistent-headers)
+38. [Explain what a ticker is in flutter.](#explain-what-a-ticker-is-in-flutter)
+39. [What are the various kinds of Streams present in flutter?](#what-are-the-various-kinds-of-streams-present-in-flutter)
+40. [What are the differences between JIT and AOT?](#what-are-the-differences-between-jit-and-aot)
+41. [How do mixins differ from interfaces in Dart?](#how-do-mixins-differ-from-interfaces-in-dart)
 
 <!-- QUESTIONS:INTERMEDIATE:END -->
 
@@ -2417,6 +3098,18 @@ Flutter Interview Questions categorized by difficulty.
 5. [What is isolate in Flutter?](#what-is-isolate-in-flutter)
 6. [Can you explain the process of testing a Flutter app?](#can-you-explain-the-process-of-testing-a-flutter-app)
 7. [What is a `CustomPainter` in Flutter?](#what-is-a-custompainter-in-flutter)
+8. [Explain how you will deploy a Flutter app to the Google Play/App Store?](#explain-how-you-will-deploy-a-flutter-app-to-the-google-playapp-store)
+9. [What are the advantages of a Flutter Inspector?](#what-are-the-advantages-of-a-flutter-inspector)
+10. [List the responsibilities of `FlutterActivity`.](#list-the-responsibilities-of-flutteractivity)
+11. [Can you describe how to implement internationalization in a flutter app?](#can-you-describe-how-to-implement-internationalization-in-a-flutter-app)
+12. [How do you implement a custom transition between screens in flutter?](#how-do-you-implement-a-custom-transition-between-screens-in-flutter)
+13. [How do you implement a custom animation curve in flutter?](#how-do-you-implement-a-custom-animation-curve-in-flutter)
+14. [Can you communicate between isolates? Describe an Isolate?](#can-you-communicate-between-isolates-describe-an-isolate)
+15. [What is the Flutter rendering pipeline and how does it work?](#what-is-the-flutter-rendering-pipeline-and-how-does-it-work)
+16. [What is the role of the `FlutterEngine` in the Flutter framework?](#what-is-the-role-of-the-flutterengine-in-the-flutter-framework)
+17. [What are platform channels in Flutter and when would you use them?](#what-are-platform-channels-in-flutter-and-when-would-you-use-them)
+18. [How do you work with multiple Flutter flavors?](#how-do-you-work-with-multiple-flutter-flavors)
+19. [What is code-splitting in Flutter, and how does it help?](#what-is-code-splitting-in-flutter-and-how-does-it-help)
 
 <!-- QUESTIONS:ADVANCED:END -->
 

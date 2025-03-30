@@ -1,0 +1,46 @@
+---
+title: What is the extension method in Dart?
+---
+
+Extension method allows us to add new functionality on top of existing libraries.For example, you can add extra functionality to the Dart core String library, that are only available in your app.
+
+Syntax to create an extension method:
+
+```
+extension <extension name> on <type> {
+  // (<member definition>)*
+}
+```
+
+Example of an Dart extension method:
+
+```dart
+// an extension method
+extension StringExtension on String {
+  String capitilizeWord() {
+    return this.split(' ').map((word) => word[0].toUpperCase() + word.substring(1)).join(' ');
+  }
+}
+
+// example of using the above extension
+String myString = 'welcome to the flutter world!!!';
+print(myString.capitilizeWord()); // Welcome To The Flutter World!!!
+```
+
+Here is how we can unleash the power of extension methods in Flutter:
+
+```dart
+// an extension on widget
+extension WidgetExtension on Widget {
+  Widget addPadding([double padding = 8.0]) {
+    return Padding(
+      padding: EdgeInsets.all(padding),
+      child: this,
+    );
+  }
+}
+
+// example of using the above extension
+Text('Text widget with the default padding of 8.0').addPadding();
+Text('Text widget with padding of 16.0').addPadding(16.0);
+```

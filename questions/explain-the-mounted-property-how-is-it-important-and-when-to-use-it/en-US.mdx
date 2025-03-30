@@ -1,0 +1,9 @@
+---
+title: Explain the `mounted` property. How is it important and when to use it?
+---
+
+The mounted property defines whether the state object, associated with it, is currently in the widget tree.
+
+After creating a State object and before calling initState, the framework **"mounts"** the State object by associating it with a BuildContext. The State object remains mounted until the framework calls dispose, after which time the framework will never ask the State object to build again.
+
+It is an error to call setState unless mounted is true. This property is useful when a method on your state calls setState() but it isn't clear when or how often that method will be called. You can use `if (mounted) {...` to make sure the State exists before calling setState().

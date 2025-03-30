@@ -1,0 +1,34 @@
+---
+title: Explain singleton class in flutter.
+---
+
+A singleton class is a class that can only be instantiated once throughout the entire application. It provides a single point of access to a shared instance of an object, which can be accessed from anywhere in the application.
+
+To create a singleton class in Flutter, we need to define a private constructor that can only be accessed within the class itself. Then, we can create a static field of the class type that holds the single instance of the class, and a static method that returns the instance. Here's an example of a singleton class in Flutter:
+
+```dart
+class MySingleton {
+  static final MySingleton _singleton = MySingleton._internal();
+
+  factory MySingleton() {
+    return _singleton;
+  }
+
+  MySingleton._internal();
+
+  void doSomething() {
+    print('Singleton class is doing something');
+  }
+}
+```
+
+In this example, `MySingleton` is a singleton class that has a private constructor, a static field `_singleton` of the same type, and a static factory method that returns the single instance of the class. The `doSomething` method is a simple method that can be called on the instance of the class.
+
+To use this singleton class, we can simply call the factory method to get the instance of the class, and then call the methods on the instance. Here's an example:
+
+```dart
+MySingleton singleton = MySingleton();
+singleton.doSomething();
+```
+
+This will create a single instance of `MySingleton` and call the `doSomething` method on it. Since `MySingleton` is a singleton class, any subsequent calls to the `MySingleton()` constructor will simply return the existing instance of the class, rather than creating a new instance.

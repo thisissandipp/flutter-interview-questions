@@ -1,0 +1,44 @@
+---
+title: What is `FutureBuilder` in Flutter and how is it used to build dynamic UI?
+---
+
+`FutureBuilder` is a widget in Flutter that allows us to build a dynamic UI based on the value of a Future. A Future is an asynchronous operation that returns a value in the future. For example, we might use a Future to retrieve data from a server, or to perform a long-running computation.
+
+The `FutureBuilder` widget listens to the Future and builds the UI based on its state. The UI can be different for three states:
+
+**Uncompleted**: When the Future is running, we can show a loading indicator or any other widget to indicate that the operation is in progress.
+
+**Completed with data**: When the Future completes with data, we can use the data to build the UI. For example, we might display a list of items retrieved from the server.
+
+**Completed with an error**: If the Future completes with an error, we can show an error message or any other widget to indicate that something went wrong.
+
+Here's an example of using `FutureBuilder` to retrieve data from a server and display a list of items:
+
+```dart
+Future<List<String>> _fetchData() async {
+  // Simulate fetching data from a server
+  return Future.delayed(Duration(seconds: 2), () => ["Item 1", "Item 2", "Item 3"]);
+}
+
+@override
+Widget build(BuildContext context) {
+  return FutureBuilder<List<String>>(
+    future: _fetchData(),
+    builder: (context, snapshot) {
+      if (snapshot.hasData) {
+        return ListView.builder(
+          itemCount: snapshot.data.length,
+          itemBuilder: (context, index) {
+            return Text(snapshot.data[index]);
+          },
+        );
+      } else if (snapshot.hasError) {
+        return Text("Error: ${snapshot.error}");
+      }
+      return CircularProgressIndicator();
+    },
+  );
+}
+```
+
+In this example, the `_fetchData` function returns a Future that retrieves data from a server. The `FutureBuilder` widget listens to the Future and uses the `builder` callback to build the UI based on its state. If the Future is running, the `CircularProgressIndicator` is displayed. If the Future completes with data, the data is displayed in a list. If the Future completes with an error, an error message is displayed.

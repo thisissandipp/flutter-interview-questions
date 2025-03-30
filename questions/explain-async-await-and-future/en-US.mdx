@@ -1,0 +1,21 @@
+---
+title: Explain async, await and Future.
+---
+
+The `async` and `await` are keywords in Dart that enable asynchronous programming. They make it easier to write asynchronous code that is readable and easier to maintain.
+
+`Future` is a core Dart library that represents an asynchronous operation that will complete in the future. A `Future` object is returned from an asynchronous function to represent a value that will be available at some point in the future.
+
+In Flutter, `async` and `await` are used to perform asynchronous operations, such as making HTTP requests or reading from a database. The Future object is used to represent the result of an asynchronous operation and is often passed to await in an async function to wait for the result to be available.
+
+```dart
+Future<String> fetchData() async {
+  // Asynchronous operation
+  return 'Data';
+}
+
+void main() async {
+  String data = await fetchData();
+  print(data);
+}
+```

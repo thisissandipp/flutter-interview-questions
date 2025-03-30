@@ -1,0 +1,50 @@
+---
+title: What is `vsync`? Explain.
+---
+
+The `vsync` in Flutter is an abbreviation for "vertical synchronization". It's a feature that ensures that animations and user interface updates are synchronized with the device's screen refresh rate. This prevents visual artifacts, such as screen tearing or stuttering, which can occur when the device's screen refresh rate and the animation's frame rate are not in sync.
+
+In Flutter, `vsync` is provided through the `TickerProvider` interface, which is a factory for creating `Ticker` objects. The `Ticker` objects are used to drive animations, and the `TickerProvider` provides the `vsync` signal that ensures that animations are in sync with the device's screen refresh rate.
+
+To use `vsync` in Flutter, a `TickerProvider` must be passed to the `AnimationController` when it is created. This allows the `AnimationController` to access the `vsync` signal and use it to drive animations.
+
+```dart
+class MyAnimation extends StatefulWidget {
+  @override
+  _MyAnimationState createState() => _MyAnimationState();
+}
+
+class _MyAnimationState extends State<MyAnimation>
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: Duration(seconds: 2),
+      vsync: this,
+    );
+    _animation = Tween<double>(begin: 0, end: 300).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: _animation.value,
+      width: _animation.value,
+      child: FlutterLogo(),
+    );
+  }
+}
+```

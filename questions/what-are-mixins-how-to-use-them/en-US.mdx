@@ -1,0 +1,54 @@
+---
+title: What are mixins? How to use them?
+---
+
+A mixin is a class whose methods and properties can be used by other classes – without subclassing. It's a reusable chunk of code that can be plugged in to any class that needs this functionality.
+
+Example of a mixin:
+
+```dart
+// To create a mixin, use `mixin` keyword instead of `class`.
+mixin GreetingsMixin {
+  String greeting = 'Hello people';
+
+  void introduce() => print('$greeting, I am Sandip.');
+}
+
+// The following example shows two classes that use the above mixin.
+class Something extends MyClass with GreetingsMixin {
+  // ...
+}
+
+class SomethingElse extends MyAnotherClass with GreetingsMixin {
+  SomethingElse() {
+    greeting = 'Hi everyone';
+  }
+}
+
+// Here is how to use them
+SomethingElse obj = SomethingElse();
+obj.introduce();  // Hi everyone, I am Sandip.
+```
+
+Sometimes you want to restrict from mixing in functionality to classes that have no deal with the mixin. To restrict a mixin, use the 'on' keyword to specify the required subclass.
+
+```dart
+class SocialMedia {
+  // ...
+}
+
+// Create a mixin restricted on [SocialMedia] class
+mixin SocialMediaGreetings on SocialMedia {
+  String greeting = 'Hello people';
+
+  void introduce() => print('$greeting, I am Sandip.');
+}
+
+// Only classes that extend or implement the [SocialMedia] class
+// can use the mixin [SocialMediaGreetings]
+class Twitter extends SocialMedia with SocialMediaGreetings {
+  Twitter() {
+    greeting = 'Hello Tweeple';
+  }
+}
+```

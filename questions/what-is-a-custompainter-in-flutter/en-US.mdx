@@ -1,0 +1,30 @@
+---
+title: What is a `CustomPainter` in Flutter?
+---
+
+In Flutter, a `CustomPainter` is a class that allows to create custom graphics and animations by painting on a Canvas. It is used in conjunction with a `CustomPaint` widget to create custom visuals that can be added to a widget tree.
+
+To use `CustomPainter`, we need to create a class that extends `CustomPainter` and implements the `paint` and `shouldRepaint` methods. The `paint` method is where we define what to draw on the canvas, while the `shouldRepaint` method is used to determine whether to repaint the canvas when the widget is updated.
+
+```dart
+// Custom Painter
+class RectanglePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = Colors.blue
+      ..style = PaintingStyle.fill;
+    final rect = Rect.fromLTWH(0, 0, size.width, size.height);
+    canvas.drawRect(rect, paint);
+  }
+
+  @override
+  bool shouldRepaint(RectanglePainter oldDelegate) => false;
+}
+
+// How to use the CustomPainter using CustomPaint widget
+CustomPaint(
+  painter: RectanglePainter(),
+  size: Size(200, 200), // defines the sixe of the canvas
+),
+```

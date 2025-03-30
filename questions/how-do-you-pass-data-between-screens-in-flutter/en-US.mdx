@@ -1,0 +1,48 @@
+---
+title: How do you pass data between screens in Flutter?
+---
+
+In Flutter, we can pass data between screens using various methods. Some of the most commonly used methods are:
+
+1. **Using constructor parameters**: We can pass data between screens by passing the required data as parameters to the constructor of the destination screen.
+   
+   ```dart
+   Navigator.push(
+     context,
+     MaterialPageRoute(
+       builder: (context) => SecondScreen(data: 'Hello World!'),
+     ),
+   );
+
+   class SecondScreen extends StatelessWidget {
+     final String data;
+
+     SecondScreen({required this.data});
+
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold( ... );
+     }
+   }
+   ```
+
+2. **Using named routes**: We can define named routes in the app and pass data as arguments to these routes.
+   
+   ```dart
+   Navigator.pushNamed(
+     context,
+     '/second',
+     arguments: 'Hello World!',
+   );
+
+   class SecondScreen extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       final String data = ModalRoute.of(context)!.settings.arguments as String;
+
+       return Scaffold( ... );
+     }
+   }
+   ```
+
+3. **Using a state management library**: We can use a state management library like Provider, Riverpod, Bloc, or MobX to manage the state of the app and pass data between screens. This approach is especially useful when complex data needs to be shared between multiple screens.

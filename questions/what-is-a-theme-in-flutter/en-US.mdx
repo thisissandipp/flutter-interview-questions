@@ -1,0 +1,28 @@
+---
+title: What is a `Theme` in Flutter?
+---
+
+In Flutter, a `Theme` is a widget that provides a way to customize the visual appearance of an app. A `Theme` widget can be used to set the colors, fonts, and other visual properties for a specific part or the entire app.
+
+Using a `Theme` widget, we can define a set of colors, fonts, and other properties that apply to all widgets within the Theme's subtree. This can make it easier to maintain consistency in the app's visual appearance and reduce the amount of duplicated code.
+
+Here are some common use cases for using a Theme widget:
+
+- Setting the app's primary and accent colors
+- Defining text styles for various widget types (e.g. headings, body text, etc.)
+- Setting default button styles
+- Defining shapes and elevations for Material Design widgets
+- Setting default padding and margins for widgets
+
+```dart
+MaterialApp(
+  theme: ThemeData(
+    primaryColor: Colors.blue,
+    accentColor: Colors.orange,
+    textTheme: TextTheme(
+      headline1: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+      bodyText1: TextStyle(fontSize: 18),
+    ),
+  ),
+),
+```

@@ -1,0 +1,17 @@
+---
+title: What technology is Flutter built with?
+---
+
+Flutter is an open-source UI software development toolkit created by Google for building natively compiled applications across mobile, web, and desktop from a single codebase. It's primarily developed using the Dart programming language, also by Google, which supports ahead-of-time (AOT) compilation for high-performance execution.
+
+The architecture of Flutter comprises three main components:
+
+1. **Flutter Framework**: Written in Dart, this layer provides a comprehensive set of libraries and widgets, including Material Design and Cupertino (iOS-style) widgets, enabling developers to craft highly customizable user interfaces.
+
+2. **Flutter Engine**: Primarily written in C++, the engine is responsible for rendering and core functionalities. Initially, Flutter utilized the Skia graphics library for rendering. However, with the release of Flutter 3.27, the Impeller rendering engine has become the default on both iOS and Android platforms. Impeller aims to deliver more predictable performance by precompiling shaders and leveraging modern graphics APIs like Metal.
+
+3. **Embedder**: This component allows Flutter applications to run on various platforms by providing an entry point and access to native APIs. It's platform-specific and integrates the Flutter engine into the target operating system.
+
+**Further Reading:**
+
+- [Flutter Architectural Overview](https://docs.flutter.dev/resources/architectural-overview)

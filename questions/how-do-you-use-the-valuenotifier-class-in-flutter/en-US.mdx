@@ -1,0 +1,28 @@
+---
+title: How do you use the `ValueNotifier` class in Flutter?
+---
+
+In Flutter, the `ValueNotifier` class is a simple class that provides a way to listen for changes to a value and update the UI accordingly. It's a convenient way to manage state for a small number of widgets, and is often used in combination with the `ChangeNotifier` and `Provider` classes from the Flutter `provider` package.
+
+To use `ValueNotifier`, first we need an instance of the class with an initial value:
+
+```dart
+final ValueNotifier<String> _myValue = ValueNotifier<String>('Initial Value');
+```
+
+To listen for changes to the value, we can use the `ValueListenableBuilder` widget. This widget takes a `ValueNotifier` and a `builder` function, and rebuilds its child whenever the value changes:
+
+```dart
+ValueListenableBuilder<String>(
+  valueListenable: _myValue,
+  builder: (BuildContext context, String value, Widget? child) {
+    return Text(value);
+  },
+),
+```
+
+To update the value of a `ValueNotifier`, simply set its value property:
+
+```dart
+_myValue.value = 'New Value';
+```

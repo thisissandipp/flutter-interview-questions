@@ -1,0 +1,16 @@
+---
+title: How do you work with multiple Flutter flavors?
+---
+
+To work with multiple Flutter flavors, follow these steps:
+
+- Define flavors in android/app/build.gradle, add `productFlavors` like dev, staging, and prod with unique `applicationId`s.
+- Set up iOS schemes, create new schemes and configuration files in Xcode for each flavor.
+- Use Dart entry points, create separate main_dev.dart, main_prod.dart, etc., for flavor-specific logic.
+
+Run/build with flavor: Use --flavor and -t flags:
+
+```sh
+flutter run --flavor dev -t lib/main_dev.dart
+flutter build apk --flavor prod -t lib/main_prod.dart
+```

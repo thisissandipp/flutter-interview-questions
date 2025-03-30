@@ -1,0 +1,26 @@
+---
+title: How do you provide accessibility when developing flutter apps, do you at all?
+---
+
+Yes, accessibility is a critical aspect of Flutter app development to ensure that the app is usable by everyone, including users with disabilities. In Flutter, several techniques are available to enhance accessibility:
+
+- **Use of Semantic Widgets:** Flutter provides `Semantics` widget, which allows you to annotate elements in the UI with meaningful descriptions. This helps screen readers understand what the widget represents and provides a better experience for visually impaired users.
+
+```dart
+Semantics(
+  label: 'Submit button',
+  child: ElevatedButton(onPressed: () {}, child: Text('Submit')),
+);
+```
+
+- **Text Accessibility:** Ensure that text content is readable by screen readers. This can be achieved by using accessible widgets like `Text` with clear, concise content and by applying the correct `semanticsLabel` for any custom widgets.
+
+- **Color Contrast:** Ensure sufficient contrast between text and background colors to assist users with visual impairments. Tools like Flutter's accessibility library can help check for contrast issues.
+
+- **Focus Management:** Implementing keyboard navigation and focus management is essential for users with motor disabilities. Flutter provides `FocusNode` and `FocusScope` to manage focus behavior.
+
+- **Custom Actions for Screen Readers:** For custom interactions like gestures or animations, use the `excludeSemantics` property wisely to avoid unnecessary verbosity and ensure that screen readers only announce relevant actions.
+
+- **Testing:** Test your app with accessibility tools like the built-in Android TalkBack or iOS VoiceOver to ensure that all elements are accessible.
+
+By using these techniques and Flutter's built-in tools, we can create more inclusive and accessible apps.

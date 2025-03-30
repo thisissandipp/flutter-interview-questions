@@ -1,0 +1,31 @@
+---
+title: Can you communicate between isolates? Describe an Isolate?
+---
+
+Yes, you can communicate between isolates in Dart using message passing via `SendPort` and `ReceivePort`. Isolates do not share memory, and each isolate has its own memory space and event loop. To communicate, one isolate sends messages to another through a `SendPort`, and the receiving isolate listens on a `ReceivePort`.
+
+**Isolate:**
+An Isolate is a separate thread of execution in Dart that runs independently, using its own memory and event loop. It's useful for performing concurrent tasks without blocking the main isolate, which is critical for Flutter apps to keep the UI responsive.
+
+```dart
+import 'dart:isolate';
+
+void main() async {
+  // Create a receive port to listen for messages from the isolate
+  final receivePort = ReceivePort();
+
+  // Spawn an isolate and send the receive port's sendPort to it
+  await Isolate.spawn(isolateFunction, receivePort.sendPort);
+
+  // Listen for messages from the isolate
+  receivePort.listen((message) {
+    print('Received message: $message');
+    receivePort.close(); // Close the receive port when done
+  });
+}
+
+// Function to be executed by the isolate
+void isolateFunction(SendPort sendPort) {
+  sendPort.send('Hello from the isolate!');
+}
+```

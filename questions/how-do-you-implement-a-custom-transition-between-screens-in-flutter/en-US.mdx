@@ -1,0 +1,27 @@
+---
+title: How do you implement a custom transition between screens in flutter?
+---
+
+To implement a custom transition between screens in flutter:
+
+- Use `PageRouteBuilder` to define the transition animations.
+- In the `pageBuilder`, define the widget for the new screen and use `Animation` objects to control the transition.
+- In the `transitionsBuilder`, use Flutter's animation widgets like `FadeTransition`, `SlideTransition`, or custom combinations to animate the transition.
+- Pass the `PageRouteBuilder` to the `Navigator.push` method.
+
+```dart
+Navigator.push(
+  context,
+  PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => NewScreen(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      final begin = Offset(1.0, 0.0);
+      final end = Offset.zero;
+      final tween = Tween(begin: begin, end: end);
+      final offsetAnimation = animation.drive(tween);
+
+      return SlideTransition(position: offsetAnimation, child: child);
+    },
+  ),
+);
+```

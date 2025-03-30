@@ -1,0 +1,54 @@
+---
+title: How to create a list with persistent headers?
+---
+
+To create a list with persistent headers in flutter, we can use the `CustomScrollView` widget along with `SliverList` and `SliverPersistentHeader`. This allows to have headers that remain visible as the user scrolls through the list.
+
+Here's how to do it:
+- Wrap the list and header in a `CustomScrollView` to enable scrolling and custom behaviors.
+- The `SliverPersistentHeader` widget allows to create a header that can remain fixed or scroll away as the user scrolls the list.
+- Inside `SliverPersistentHeader`, we can define the header's appearance, and we can also control whether it stays fixed or scrolls away.
+
+```dart
+class PersistentHeaderList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverPersistentHeader(
+            delegate: _MyPersistentHeaderDelegate(),
+            pinned: true, // Makes the header sticky
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return ListTile(title: Text('Item $index'));
+              },
+              childCount: 100,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MyPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  @override
+  double get maxExtent => 100.0;
+  @override
+  double get minExtent => 60.0;
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Colors.blue,
+      child: Text('Persistent Header'),
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+}
+```

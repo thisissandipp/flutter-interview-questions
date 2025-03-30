@@ -1,0 +1,15 @@
+---
+title: What are the differences between JIT and AOT?
+---
+
+JIT stands for Just-in-Time vs AOT stands for Ahead-of-Time.
+
+- JIT compiles code during runtime. Used in development (e.g., hot reload) but has slower performance.
+- AOT compiles code before runtime (during build). Used in production for faster performance and optimized binary size.
+
+Key Differences:
+
+- JIT is slower, smaller binary, errors at runtime.
+- AOT is faster, larger binary, errors at compile-time.
+
+In Flutter, JIT is used in debug mode, and AOT is used in release mode for optimized apps.

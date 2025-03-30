@@ -1,0 +1,33 @@
+---
+title: What are platform channels in Flutter and when would you use them?
+---
+
+Platform channels in Flutter enable communication between Flutter’s Dart code and the host platform's native code (e.g., Java/Kotlin on Android or Swift/Objective-C on iOS). They are used when you need to access platform-specific APIs or features not directly available in Flutter.
+
+When to use them:
+
+- Accessing device hardware (camera, GPS, sensors).
+- Using platform-specific libraries or SDKs.
+- Integrating native functionality like notifications or background services.
+
+Example:
+Using a platform channel to get the battery level:
+
+```dart
+// Dart (Flutter)
+const platform = MethodChannel('samples.flutter.dev/battery');
+final batteryLevel = await platform.invokeMethod('getBatteryLevel');
+```
+
+```java
+// Android (Native)
+new MethodChannel(getFlutterEngine().getDartExecutor().getBinaryMessenger(), "samples.flutter.dev/battery")
+    .setMethodCallHandler((call, result) -> {
+        if (call.method.equals("getBatteryLevel")) {
+            int batteryLevel = getBatteryLevel(); // Native method
+            result.success(batteryLevel);
+        } else {
+            result.notImplemented();
+        }
+    });
+```

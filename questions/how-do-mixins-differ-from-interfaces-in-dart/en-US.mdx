@@ -1,0 +1,34 @@
+---
+title: How do mixins differ from interfaces in Dart?
+---
+
+In Dart, mixins and interfaces serve different purposes:
+
+**Mixins:** Allow a class to reuse code from multiple classes without using inheritance. Mixins are typically used to add functionality to a class. They are declared using the mixin keyword and can be applied to a class via the with keyword. A class can apply multiple mixins.
+
+```dart
+mixin Walker {
+  void walk() => print("Walking");
+}
+
+class Person with Walker {
+  // Person can now use the walk() method
+}
+```
+
+**Interfaces:** Define a contract that a class must adhere to. In Dart, all classes implicitly act as interfaces. To implement an interface, a class uses the implements keyword. Unlike mixins, interfaces do not allow code reuse—they only define method signatures that must be implemented.
+
+```dart
+class Animal {
+  void eat();
+}
+
+class Dog implements Animal {
+  @override
+  void eat() => print("Dog eating");
+}
+```
+
+**Key Differences:**
+- Mixins provide code reuse; can be used with multiple classes.
+- Interfaces define required methods, but no code reuse. A class can implement multiple interfaces.

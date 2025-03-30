@@ -1,0 +1,23 @@
+---
+title: How do you implement a draggable widget in flutter?
+---
+
+To implement a draggable widget in flutter, use the `Draggable` widget. Here's how to do it:
+
+- Use the `Draggable` widget to wrap the element you want to make draggable.
+- Pass the data you want to drag through the data property.
+- Use `feedback` to specify the widget that appears while dragging and `childWhenDragging` for the widget that replaces the original widget during the drag.
+
+```dart
+Draggable<int>(
+  data: 1,
+  feedback: Material(
+    color: Colors.transparent,
+    child: Icon(Icons.access_alarm, size: 50),
+  ),
+  childWhenDragging: Container(),
+  child: Icon(Icons.access_alarm),
+)
+```
+
+In this example, when the user starts dragging the icon, it shows a smaller icon as the feedback. The original icon disappears until the drag ends.

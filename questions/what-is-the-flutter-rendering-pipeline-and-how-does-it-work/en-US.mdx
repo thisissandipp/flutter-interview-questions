@@ -1,0 +1,14 @@
+---
+title: What is the Flutter rendering pipeline and how does it work?
+---
+
+The Flutter rendering pipeline is the process through which Flutter converts UI code into pixels on the screen. It has the following stages:
+
+1. **UI Widgets:** The Flutter app starts with the widget tree, where you define the structure of your UI. This tree is immutable.
+2. **Element Tree:** The widget tree is transformed into the element tree, which is mutable and holds the state and structure of the app.
+3. **Render Tree:** The element tree builds a render tree, which describes the layout and paint information of each widget.
+4. **Layout Phase:** In this phase, the size and position of each widget in the render tree are calculated. Parent widgets pass constraints to child widgets to determine their dimensions.
+5. **Painting Phase:** Once layout calculations are complete, the render tree generates painting commands for each widget.
+6. **Compositing:** Flutter combines painting layers into a single visual representation. This step optimizes rendering by batching layers.
+7. **Rasterization:** The Skia engine takes the composited layers and converts them into actual pixels to display on the screen.
+8. **GPU Rendering:** Finally, the GPU renders the rasterized content onto the device screen.

@@ -1,0 +1,23 @@
+---
+title: How do Object, dynamic, and var differ in Dart?
+---
+
+In Dart, Object, dynamic, and var are used for variable declarations but differ in how types are handled:
+
+**Object:** The base class for all types in Dart. Variables declared as Object can hold any type of value, but you need to explicitly cast them when accessing methods or properties specific to that type.
+
+```dart
+Object obj = "Hello";
+```
+
+**dynamic:** Allows any type, similar to Object, but without the need for casting. At runtime, the type is resolved dynamically, and any method or property can be accessed without compile-time checks.
+
+```dart
+dynamic obj = "Hello"; // obj.length; (no type safety, but flexible)
+```
+
+**var:** Inferred type based on the assigned value. The type is determined at compile time and is fixed for the variable after assignment.
+
+```dart
+var obj = "Hello"; // (obj is inferred as String)
+```

@@ -1,0 +1,38 @@
+---
+title: Explain what a ticker is in flutter.
+---
+
+In Flutter, a ticker is a mechanism that helps to drive animations. It provides a continuous stream of time, essentially ticking at a fixed interval (typically the frame rate). This enables the animation framework to update the UI at a consistent rate.
+
+A `Ticker` is often used with `AnimationController`, which is responsible for controlling the animation's progress over time. The Ticker's job is to notify the animation controller every frame so that it can update the animation’s state, which in turn updates the UI.
+
+```dart
+class MyAnimatedWidget extends StatefulWidget {
+  @override
+  _MyAnimatedWidgetState createState() => _MyAnimatedWidgetState();
+}
+
+class _MyAnimatedWidgetState extends State<MyAnimatedWidget> with TickerProviderStateMixin {
+  late Ticker _ticker;
+
+  @override
+  void initState() {
+    super.initState();
+    _ticker = createTicker((elapsed) {
+      print('Time elapsed: $elapsed');
+    });
+    _ticker.start();  // Starts the ticker
+  }
+
+  @override
+  void dispose() {
+    _ticker.dispose(); // Clean up the ticker
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+```

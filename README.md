@@ -42,7 +42,7 @@ This list contains common Flutter interview questions and their answers. From ba
 | 29 | [What is `AppLifecycleState`?](#what-is-applifecyclestate) | Intermediate |
 | 30 | [What is the difference between `NetworkImage` and `Image.network` in flutter?](#what-is-the-difference-between-networkimage-and-imagenetwork-in-flutter) | Intermediate |
 | 31 | [Explain async, await and Future.](#explain-async-await-and-future) | Intermediate |
-| 32 | [What is Flutter?](#what-is-resizetoavoidbottominset-when-should-we-use-it) | Intermediate |
+| 32 | [What is `resizeToAvoidBottomInset`? When should we use it?](#what-is-resizetoavoidbottominset-when-should-we-use-it) | Intermediate |
 | 33 | [What is `TextEditingController`?](#what-is-texteditingcontroller) | Easy |
 | 34 | [What is `Animation` and `AnimationController`?](#what-is-animation-and-animationcontroller) | Intermediate |
 | 35 | [What is `InheritedWidget` in Flutter?](#what-is-inheritedwidget-in-flutter) | Advanced |
@@ -61,6 +61,36 @@ This list contains common Flutter interview questions and their answers. From ba
 | 48 | [What is Factory constructor?](#what-is-factory-constructor) | Intermediate |
 | 49 | [Can you explain the process of testing a Flutter app?](#can-you-explain-the-process-of-testing-a-flutter-app) | Advanced |
 | 50 | [Explain singleton class in flutter.](#explain-singleton-class-in-flutter) | Intermediate |
+| 51 | [What technology is Flutter built with?](#what-technology-is-flutter-built-with) | Easy |
+| 52 | [What is the event loop?](#what-is-the-event-loop) | Intermediate |
+| 53 | [What is the difference between Provider vs. InheritedWidget?](#what-is-the-difference-between-provider-vs-inheritedwidget) | Intermediate |
+| 54 | [What is the purpose of the `initState()` method in a StatefulWidget?](#what-is-the-purpose-of-the-initstate-method-in-a-statefulwidget) | Easy |
+| 55 | [What is the purpose of the `dispose()` method in a StatefulWidget?](#what-is-the-purpose-of-the-dispose-method-in-a-statefulwidget) | Easy |
+| 56 | [What is a GlobalKey in Flutter?](#what-is-a-globalkey-in-flutter) | Intermediate |
+| 57 | [What is the difference between padding and margin in Flutter?](#what-is-the-difference-between-padding-and-margin-in-flutter) | Easy |
+| 58 | [What is the purpose of the scaffold widget in Flutter?](#what-is-the-purpose-of-the-scaffold-widget-in-flutter) | Easy |
+| 59 | [What is the purpose of the Expanded widget in Flutter?](#what-is-the-purpose-of-the-expanded-widget-in-flutter) | Easy |
+| 60 | [How do you handle user input in Flutter?](#how-do-you-handle-user-input-in-flutter) | Intermediate |
+| 61 | [What is the purpose of the `LayoutBuilder` widget in Flutter?](#what-is-the-purpose-of-the-layoutbuilder-widget-in-flutter) | Intermediate |
+| 62 | [What is the purpose of the `SingleChildScrollView` widget in Flutter?](#what-is-the-purpose-of-the-singlechildscrollview-widget-in-flutter) | Easy |
+| 63 | [What is the purpose of the `Stack` widget in Flutter?](#what-is-the-purpose-of-the-stack-widget-in-flutter) | Easy |
+| 64 | [What is a `Theme` in Flutter?](#what-is-a-theme-in-flutter) | Easy |
+| 65 | [What is the purpose of the `Visibility` widget in Flutter?](#what-is-the-purpose-of-the-visibility-widget-in-flutter) | Easy |
+| 66 | [How do you navigate between screens in Flutter?](#how-do-you-navigate-between-screens-in-flutter) | Easy |
+| 67 | [What is a modal bottom sheet in Flutter?](#what-is-a-modal-bottom-sheet-in-flutter) | Easy |
+| 68 | [How do you use the `ValueNotifier` class in Flutter?](#how-do-you-use-the-valuenotifier-class-in-flutter) | Intermediate |
+| 69 | [How do you use the `Positioned` widget in Flutter?](#how-do-you-use-the-positioned-widget-in-flutter) | Easy |
+| 70 | [How do you pass data between screens in Flutter?](#how-do-you-pass-data-between-screens-in-flutter) | Easy |
+| 71 | [What is a `MediaQuery` in Flutter?](#what-is-a-mediaquery-in-flutter) | Intermediate |
+| 72 | [What is the purpose of the `didUpdateWidget` method in a StatefulWidget?](#what-is-the-purpose-of-the-didupdatewidget-method-in-a-statefulwidget) | Intermediate |
+| 73 | [What is a `CustomPainter` in Flutter?](#what-is-a-custompainter-in-flutter) | Advanced |
+| 74 | [What is the purpose of the `AnimatedBuilder` widget in Flutter?](#what-is-the-purpose-of-the-animatedbuilder-widget-in-flutter) | Intermediate |
+| 75 | [What is the purpose of the `Navigator` class in Flutter?](#what-is-the-purpose-of-the-navigator-class-in-flutter) | Easy |
+| 76 | [What is the purpose of the `AnimatedSwitcher` widget in Flutter?](#what-is-the-purpose-of-the-animatedswitcher-widget-in-flutter) | Intermediate |
+| 77 | [What is the purpose of the `FittedBox` widget in Flutter?](#what-is-the-purpose-of-the-fittedbox-widget-in-flutter) | Easy |
+| 78 | [What is State Management in Flutter?](#what-is-state-management-in-flutter) | Intermediate |
+| 79 | [What is the difference between Cupertino and Material Design in Flutter?](#what-is-the-difference-between-cupertino-and-material-design-in-flutter) | Easy |
+| 80 | [What is the purpose of the Material Design Icons package in Flutter?](#what-is-the-purpose-of-the-material-design-icons-package-in-flutter) | Easy |
 
 <!-- QUESTIONS:TOC:END -->
 
@@ -795,7 +825,7 @@ void main() async {
 
 <br>
       
-### What is Flutter?
+### What is `resizeToAvoidBottomInset`? When should we use it?
       
 <!-- Update here: /questions/what-is-resizetoavoidbottominset-when-should-we-use-it/en-US.mdx -->
 
@@ -1407,6 +1437,881 @@ This will create a single instance of `MySingleton` and call the `doSomething` m
 
 <br>
       
+### What technology is Flutter built with?
+      
+<!-- Update here: /questions/what-technology-is-flutter-built-with/en-US.mdx -->
+
+Flutter is an open-source UI software development toolkit created by Google for building natively compiled applications across mobile, web, and desktop from a single codebase. It's primarily developed using the Dart programming language, also by Google, which supports ahead-of-time (AOT) compilation for high-performance execution.
+
+The architecture of Flutter comprises three main components:
+
+1. **Flutter Framework**: Written in Dart, this layer provides a comprehensive set of libraries and widgets, including Material Design and Cupertino (iOS-style) widgets, enabling developers to craft highly customizable user interfaces.
+
+2. **Flutter Engine**: Primarily written in C++, the engine is responsible for rendering and core functionalities. Initially, Flutter utilized the Skia graphics library for rendering. However, with the release of Flutter 3.27, the Impeller rendering engine has become the default on both iOS and Android platforms. Impeller aims to deliver more predictable performance by precompiling shaders and leveraging modern graphics APIs like Metal.
+
+3. **Embedder**: This component allows Flutter applications to run on various platforms by providing an entry point and access to native APIs. It's platform-specific and integrates the Flutter engine into the target operating system.
+
+**Further Reading:**
+
+- [Flutter Architectural Overview](https://docs.flutter.dev/resources/architectural-overview)
+
+<!-- Update here: /questions/what-technology-is-flutter-built-with/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-technology-is-flutter-built-with/en-US.mdx)
+
+<br>
+      
+### What is the event loop?
+      
+<!-- Update here: /questions/what-is-the-event-loop/en-US.mdx -->
+
+In Flutter, the event loop is a mechanism used to manage the flow of events and callbacks in an application. The event loop runs on a single thread and is responsible for processing events, such as user input or network I/O, and executing any associated callbacks.
+
+The event loop works by maintaining a queue of events and callbacks that need to be processed. When an event occurs, such as a user tapping a button, the event is added to the end of the event queue. The event loop then dequeues events from the front of the queue and executes any associated callbacks, such as updating the user interface or performing a network request.
+
+The event loop is a crucial part of the Flutter framework, as it allows developers to create responsive and interactive applications that can handle user input and respond to changes in real-time. By using the event loop effectively, developers can ensure that their applications remain fast and responsive, even when performing complex tasks or running on slower devices.
+
+<!-- Update here: /questions/what-is-the-event-loop/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-event-loop/en-US.mdx)
+
+<br>
+      
+### What is the difference between Provider vs. InheritedWidget?
+      
+<!-- Update here: /questions/what-is-the-difference-between-provider-vs-inheritedwidget/en-US.mdx -->
+
+Provider and InheritedWidget are both ways to share data between widgets in Flutter, but they differ in their implementation and approach.
+
+InheritedWidget is a built-in widget in Flutter that allows the sharing of data between widgets in a tree structure. It works by creating a tree of widgets, where each widget can access data from its ancestor widget. This makes it easy to share data between widgets without the need for callback functions or prop drilling. InheritedWidget can be used for simple to moderately complex cases, but can become cumbersome to use for more complex use cases.
+
+Provider is a third-party package that provides an easy and efficient way to manage state in Flutter. It is built on top of InheritedWidget and offers a more declarative approach to managing state. Provider allows widgets to access data by declaring what data they need and then automatically rebuilding when the data changes. Provider is highly scalable and can be used for both simple and complex use cases.
+
+In summary, while both Provider and InheritedWidget can be used to share data between widgets, Provider offers a more declarative and scalable approach to managing state, while InheritedWidget is a built-in widget in Flutter that can be used for simple to moderately complex use cases.
+
+<!-- Update here: /questions/what-is-the-difference-between-provider-vs-inheritedwidget/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-difference-between-provider-vs-inheritedwidget/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `initState()` method in a StatefulWidget?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-initstate-method-in-a-statefulwidget/en-US.mdx -->
+
+The `initState()` method is a lifecycle method in the `StatefulWidget` class of the Flutter framework. It is called once when the stateful widget is first inserted into the widget tree and it is used to initialize the state of the widget.
+
+In the `initState()` method, we can perform one-time initialization tasks, such as setting default values for your widget's state or initializing any controllers that the widget might use. It is important to note that the `initState()` method is only called once during the lifetime of a `StatefulWidget`. After the `initState()` method is called, subsequent updates to the widget's state will not cause the `initState()` method to be called again.
+
+Overall, the `initState()` method provides a way to set up the initial state of the widget and perform any necessary initialization tasks.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-initstate-method-in-a-statefulwidget/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-initstate-method-in-a-statefulwidget/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `dispose()` method in a StatefulWidget?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-dispose-method-in-a-statefulwidget/en-US.mdx -->
+
+The `dispose()` method is a lifecycle method in the `State` class of a `StatefulWidget` in the Flutter framework. It is called when the stateful widget is removed from the widget tree, giving us the opportunity to perform any cleanup tasks or release any resources that the widget may have used.
+
+In the `dispose()` method, we can perform tasks such as closing streams, cancelling network requests, or disposing of any controllers or listeners that the widget may have used. By doing so, we can prevent memory leaks and ensure that the widget doesn't continue to consume system resources after it is no longer needed.
+
+It is important to note that the `dispose()` method is not called during a hot reload or a rebuild, as the widget is not removed from the widget tree in these cases. However, it will be called when the widget is removed from the widget tree due to a state change or when the parent widget is removed.
+
+Overall, the `dispose()` method provides a way to clean up any resources that the widget may have used, ensuring that the application runs smoothly and efficiently.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-dispose-method-in-a-statefulwidget/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-dispose-method-in-a-statefulwidget/en-US.mdx)
+
+<br>
+      
+### What is a GlobalKey in Flutter?
+      
+<!-- Update here: /questions/what-is-a-globalkey-in-flutter/en-US.mdx -->
+
+A `GlobalKey` is a unique identifier for a widget in the widget tree, allowing the widget to be accessed and manipulated from outside of its parent or ancestor widgets. It is a class in the Flutter framework that can be used with stateful or stateless widgets to uniquely identify a widget.
+
+With a `GlobalKey`, we can access a widget's state, as well as invoke its methods and properties from other widgets in the widget tree. This can be useful in situations where we need to manipulate a widget's state from outside of its parent widget, such as in form validation or when implementing animations.
+
+However, it is important to use `GlobalKey` sparingly and only when necessary, as overuse can lead to poor code maintainability and performance issues. When possible, it is generally recommended to use the `BuildContext` object and Flutter's reactive programming model to handle state and data management in the application.
+
+<!-- Update here: /questions/what-is-a-globalkey-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-a-globalkey-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the difference between padding and margin in Flutter?
+      
+<!-- Update here: /questions/what-is-the-difference-between-padding-and-margin-in-flutter/en-US.mdx -->
+
+In Flutter, `padding` and `margin` are two properties used to adjust the spacing between widgets in the layout.
+
+- Padding is the amount of space added within a widget, between its content and its border. It affects the layout of the widget and increases the size of the widget. Padding is set using the `padding` property of a widget and can be applied to any widget.
+
+- Margin is the amount of space added outside a widget, between the widget and its parent container. It does not affect the layout of the widget but rather positions the widget within its parent. Margin is set using the `margin` property of a widget and can only be applied to widgets that are inside a container.
+
+In summary, `padding` is used to adjust the space inside a widget while `margin` is used to adjust the space outside a widget. Both `padding` and `margin` are important properties for achieving the desired layout and spacing between widgets in a Flutter application.
+
+<!-- Update here: /questions/what-is-the-difference-between-padding-and-margin-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-difference-between-padding-and-margin-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the scaffold widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-scaffold-widget-in-flutter/en-US.mdx -->
+
+The `Scaffold` widget in Flutter is a basic structure or layout for a screen or a page in a Flutter application. It provides a visual structure for displaying a material design-style layout, which includes app bars, drawers, floating action buttons, and more.
+
+The Scaffold widget serves as a container for different widgets, such as a `AppBar`, `BottomNavigationBar`, `Drawer`, and `FloatingActionButton`. It also provides a body property for adding the main content of the screen, and backgroundColor property for setting the background color of the screen.
+
+Using a Scaffold widget can help to quickly build a basic structure for a Flutter application's user interface. The widgets it contains can be customized to achieve a wide range of designs and functionalities.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-scaffold-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-scaffold-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the Expanded widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-expanded-widget-in-flutter/en-US.mdx -->
+
+In Flutter, the `Expanded` widget is used to adjust the available space for a child widget of a `Row`, `Column`, or `Flex` widget, by dividing the remaining free space among the children.
+
+When an `Expanded` widget is used, the child widget of the Row, Column, or Flex takes up as much available space as possible in the direction of the `mainAxisSize` property of the parent widget. This means that if the parent widget is a Row, the Expanded widget expands the child widget horizontally, and if the parent is a Column, the Expanded widget expands the child widget vertically.
+
+If there is more than one Expanded widget in the same Row, Column, or Flex, the available space is divided among the children based on their `flex` property, which determines the proportion of the remaining free space that each child should occupy.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-expanded-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-expanded-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you handle user input in Flutter?
+      
+<!-- Update here: /questions/how-do-you-handle-user-input-in-flutter/en-US.mdx -->
+
+In Flutter, we can handle user input through various widgets such as `TextField`, `Checkbox`, `Radio`, `Slider`, `DropdownButton`, `GestureDetector`, and more.
+
+Here is a simple process for handling user input in Flutter:
+
+1. Determine the widget that captures the user's input, such as a `TextField` for text input or a `Checkbox` for boolean input.
+2. Attach a callback function to the widget that should be called when the user interacts with it. For example, we can attach the `onChanged` callback to a `Checkbox` to be notified when the user taps the checkbox.
+3. In the callback function, update the state of the application based on the user's input. For example, we can update a bool variable when the user toggles a `Checkbox`, or update a String variable when the user types into a `TextField`.
+4. If the state has changed, call `setState()` to rebuild the UI with the updated state.
+
+It's important to note that the specific process for handling user input will vary depending on the widget and the requirements of the app.
+
+<!-- Update here: /questions/how-do-you-handle-user-input-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-handle-user-input-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `LayoutBuilder` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-layoutbuilder-widget-in-flutter/en-US.mdx -->
+
+The `LayoutBuilder` widget in Flutter is used to get the constraints of the parent widget and build child widgets based on these constraints.
+
+The purpose of `LayoutBuilder` is to enable creating responsive UIs that adapt to the size of their parent widget. The `LayoutBuilder` widget provides a callback that takes in the `BoxConstraints` of the parent widget, which represent the minimum and maximum width and height of the widget.
+
+These constraints can be used to build child widgets that fit within the available space. For example, the `MediaQuery.of(context).size` property can be used to to get the screen size, and then using the `LayoutBuilder` widget to create a child widget that adjusts its size based on the screen size.
+
+Here's an example of using LayoutBuilder to create a widget that adjusts its size based on the available space:
+
+```dart
+LayoutBuilder(
+  builder: (BuildContext context, BoxConstraints constraints) {
+    return Container(
+      width: constraints.maxWidth * 0.5,
+      height: constraints.maxHeight * 0.5,
+      child: Text('This widget will take up 50% of the available space'),
+    );
+  },
+);
+```
+
+In this example, the `Container` widget will take up 50% of the available width and height, based on the `BoxConstraints` provided by the `LayoutBuilder`. This allows the widget to adjust its size based on the available space, making it more responsive.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-layoutbuilder-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-layoutbuilder-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `SingleChildScrollView` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-singlechildscrollview-widget-in-flutter/en-US.mdx -->
+
+The `SingleChildScrollView` widget in Flutter is used to make its child widget scrollable if it overflows the parent container.
+
+The purpose of `SingleChildScrollView` is to provide a way to display content that is larger than the available space. This widget is often used when a widget contains a large amount of content that doesn't fit on the screen, such as a long list of items, a large image, or a form with many input fields.
+
+By wrapping the child widget in a `SingleChildScrollView`, the user can scroll through the content to see all of it. The `SingleChildScrollView` widget takes up as much space as its child widget requires, and allows the child to be scrolled vertically or horizontally to view all of its content.
+
+Here's an example of using `SingleChildScrollView` to create a scrollable list:
+
+```dart
+SingleChildScrollView(
+  child: Column(
+    children: <Widget>[
+      ListTile(title: Text('Item 1')),
+      ListTile(title: Text('Item 2')),
+      ListTile(title: Text('Item 3')),
+      // Add more items here...
+    ],
+  ),
+);
+```
+
+In this example, the `SingleChildScrollView` wraps a `Column` widget containing several `ListTile` widgets. If the content of the `Column` is too large to fit on the screen, the user can scroll through it to see all of the items.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-singlechildscrollview-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-singlechildscrollview-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `Stack` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-stack-widget-in-flutter/en-US.mdx -->
+
+In Flutter, the `Stack` widget is used to place widgets on top of each other in a specific order. It allows to position widgets at specific locations within the parent widget by using offsets or alignment.
+
+The main purpose of the `Stack` widget is to provide a way to overlay widgets on top of each other. For example, if we want to display a text label over an image, we can use a `Stack` widget to place the text label on top of the image.
+
+```dart
+Stack(
+  children: [
+    Image.network('https://picsum.photos/250?image=9'),
+    Center(child: Text('Hello, World!'),
+  ],
+),
+```
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-stack-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-stack-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is a `Theme` in Flutter?
+      
+<!-- Update here: /questions/what-is-a-theme-in-flutter/en-US.mdx -->
+
+In Flutter, a `Theme` is a widget that provides a way to customize the visual appearance of an app. A `Theme` widget can be used to set the colors, fonts, and other visual properties for a specific part or the entire app.
+
+Using a `Theme` widget, we can define a set of colors, fonts, and other properties that apply to all widgets within the Theme's subtree. This can make it easier to maintain consistency in the app's visual appearance and reduce the amount of duplicated code.
+
+Here are some common use cases for using a Theme widget:
+
+- Setting the app's primary and accent colors
+- Defining text styles for various widget types (e.g. headings, body text, etc.)
+- Setting default button styles
+- Defining shapes and elevations for Material Design widgets
+- Setting default padding and margins for widgets
+
+```dart
+MaterialApp(
+  theme: ThemeData(
+    primaryColor: Colors.blue,
+    accentColor: Colors.orange,
+    textTheme: TextTheme(
+      headline1: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+      bodyText1: TextStyle(fontSize: 18),
+    ),
+  ),
+),
+```
+
+<!-- Update here: /questions/what-is-a-theme-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-a-theme-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `Visibility` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-visibility-widget-in-flutter/en-US.mdx -->
+
+In Flutter, the `Visibility` widget is used to control the visibility of a child widget based on a certain condition. The `Visibility` widget can be used to show or hide a widget dynamically, based on user interactions or other conditions.
+
+The `Visibility` widget has a visible property that determines whether its child is visible or not. If visible is set to true, the child is visible, and if it's set to false, the child is hidden.
+
+Here are some use cases for the `Visibility` widget:
+
+- Hiding/showing a widget based on a certain condition (e.g. a user's authentication status)
+- Hiding/showing a widget based on user interactions (e.g. a dropdown menu that appears when a button is pressed)
+- Animating the appearance/disappearance of a widget (e.g. fading in/out a widget when it appears/disappears)
+
+```dart
+Visibility(
+  visible: true, // currently visible, set to `false` to disappear 
+  child: Text(
+    'Hello, World!',
+    style: TextStyle(fontSize: 24),
+  ),
+),
+```
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-visibility-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-visibility-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you navigate between screens in Flutter?
+      
+<!-- Update here: /questions/how-do-you-navigate-between-screens-in-flutter/en-US.mdx -->
+
+In Flutter, we can navigate between screens using the `Navigator` class. We can push a new screen onto the stack using the `push` method, and pop the current screen off the stack using the `pop` method. We can also use named routes to navigate between screens. To do this, we need to define a map of named routes in the `MaterialApp`, and then use the `Navigator.pushNamed` method to navigate to a specific named route.
+
+Here are the basic steps to navigate between screens in Flutter:
+
+1. Define the screens or pages as separate widgets, each with its own unique name and content.
+2. Use the `Navigator.push()` method to push a new Route onto the stack.
+   ```dart
+   Navigator.push(
+     context,
+     MaterialPageRoute(builder: (context) => SecondScreen()),
+   );
+   ```
+3. Now, to go back to the previous screen use the `Navigator.pop()` method.
+   ```dart
+   Navigator.pop(context),
+   ```
+
+<!-- Update here: /questions/how-do-you-navigate-between-screens-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-navigate-between-screens-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is a modal bottom sheet in Flutter?
+      
+<!-- Update here: /questions/what-is-a-modal-bottom-sheet-in-flutter/en-US.mdx -->
+
+In Flutter, a modal bottom sheet is a type of popup that is displayed at the bottom of the screen and covers a portion of the parent widget. Modal bottom sheets are commonly used to display additional options or information that are related to the parent widget, but require additional user input to complete an action.
+
+Modal bottom sheets are created using the `showModalBottomSheet()` method, which takes a `BuildContext` and a `builder` argument. The `builder` argument is a callback that returns a widget that represents the content of the modal bottom sheet.
+
+```dart
+showModalBottomSheet(
+  context: context,
+  builder: (BuildContext context) {
+    return Container(
+      // WRITE YOUR CODE HERE
+    );
+  },
+);
+```
+
+<!-- Update here: /questions/what-is-a-modal-bottom-sheet-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-a-modal-bottom-sheet-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you use the `ValueNotifier` class in Flutter?
+      
+<!-- Update here: /questions/how-do-you-use-the-valuenotifier-class-in-flutter/en-US.mdx -->
+
+In Flutter, the `ValueNotifier` class is a simple class that provides a way to listen for changes to a value and update the UI accordingly. It's a convenient way to manage state for a small number of widgets, and is often used in combination with the `ChangeNotifier` and `Provider` classes from the Flutter `provider` package.
+
+To use `ValueNotifier`, first we need an instance of the class with an initial value:
+
+```dart
+final ValueNotifier<String> _myValue = ValueNotifier<String>('Initial Value');
+```
+
+To listen for changes to the value, we can use the `ValueListenableBuilder` widget. This widget takes a `ValueNotifier` and a `builder` function, and rebuilds its child whenever the value changes:
+
+```dart
+ValueListenableBuilder<String>(
+  valueListenable: _myValue,
+  builder: (BuildContext context, String value, Widget? child) {
+    return Text(value);
+  },
+),
+```
+
+To update the value of a `ValueNotifier`, simply set its value property:
+
+```dart
+_myValue.value = 'New Value';
+```
+
+<!-- Update here: /questions/how-do-you-use-the-valuenotifier-class-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-use-the-valuenotifier-class-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you use the `Positioned` widget in Flutter?
+      
+<!-- Update here: /questions/how-do-you-use-the-positioned-widget-in-flutter/en-US.mdx -->
+
+In Flutter, the `Positioned` widget is used to position a child widget within a `Stack` widget. The `Positioned` widget takes four optional arguments: `left`, `top`, `right`, and `bottom`, which specify the position of the child widget relative to the edges of the parent `Stack` widget.
+
+For example:
+
+```dart
+Stack(
+  children: [
+    Positioned(
+      left: 10,
+      top: 10,
+      child: Text('Hi there!'),
+    ),
+    Positioned(
+      right: 10,
+      bottom: 10,
+      child: Text('Bye there!'),
+    ),
+  ],
+),
+```
+
+In this example, we create a Stack widget with two child widgets that are positioned at opposite corners of the Stack. The first child widget is positioned 10 pixels from the left and top edges of the Stack, while the second child widget is positioned 10 pixels from the right and bottom edges of the Stack.
+
+<!-- Update here: /questions/how-do-you-use-the-positioned-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-use-the-positioned-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### How do you pass data between screens in Flutter?
+      
+<!-- Update here: /questions/how-do-you-pass-data-between-screens-in-flutter/en-US.mdx -->
+
+In Flutter, we can pass data between screens using various methods. Some of the most commonly used methods are:
+
+1. **Using constructor parameters**: We can pass data between screens by passing the required data as parameters to the constructor of the destination screen.
+   
+   ```dart
+   Navigator.push(
+     context,
+     MaterialPageRoute(
+       builder: (context) => SecondScreen(data: 'Hello World!'),
+     ),
+   );
+
+   class SecondScreen extends StatelessWidget {
+     final String data;
+
+     SecondScreen({required this.data});
+
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold( ... );
+     }
+   }
+   ```
+
+2. **Using named routes**: We can define named routes in the app and pass data as arguments to these routes.
+   
+   ```dart
+   Navigator.pushNamed(
+     context,
+     '/second',
+     arguments: 'Hello World!',
+   );
+
+   class SecondScreen extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       final String data = ModalRoute.of(context)!.settings.arguments as String;
+
+       return Scaffold( ... );
+     }
+   }
+   ```
+
+3. **Using a state management library**: We can use a state management library like Provider, Riverpod, Bloc, or MobX to manage the state of the app and pass data between screens. This approach is especially useful when complex data needs to be shared between multiple screens.
+
+<!-- Update here: /questions/how-do-you-pass-data-between-screens-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/how-do-you-pass-data-between-screens-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is a `MediaQuery` in Flutter?
+      
+<!-- Update here: /questions/what-is-a-mediaquery-in-flutter/en-US.mdx -->
+
+In Flutter, a `MediaQuery` is a widget that provides information about the device's screen size, orientation, and other display-related characteristics. It is typically used to create responsive UIs that adapt to different screen sizes and densities.
+
+The `MediaQuery` widget is usually placed at the root of the widget tree, and it provides a `MediaQueryData` object that contains various properties related to the device's display, such as:
+
+- **Screen size**: `MediaQueryData.size` returns the size of the device's screen in logical pixels (i.e., independent of the device's pixel density).
+- **Screen orientation**: `MediaQueryData.orientation` returns the orientation of the device's screen (portrait or landscape).
+- **Pixel density**: `MediaQueryData.devicePixelRatio` returns the device's pixel density, which is the ratio between physical pixels and logical pixels.
+- **Text scaling factor**: `MediaQueryData.textScaleFactor` returns the user's preferred text scaling factor, which can be used to adjust the font size of text in the app.
+- **Platform**: `MediaQueryData.platformBrightness` returns the platform's preferred brightness mode (light or dark).
+
+<!-- Update here: /questions/what-is-a-mediaquery-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-a-mediaquery-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `didUpdateWidget` method in a StatefulWidget?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-didupdatewidget-method-in-a-statefulwidget/en-US.mdx -->
+
+In Flutter, `StatefulWidget` is a widget that has mutable state that can change over time. When the state of a `StatefulWidget` changes, the framework rebuilds the widget tree to reflect the new state.
+
+The `didUpdateWidget` method is a lifecycle method that is called when the framework rebuilds a `StatefulWidget`. Specifically, it is called when a new instance of the widget is created and inserted into the widget tree, and when the widget's configuration (i.e., the values of its properties) changes.
+
+The purpose of the `didUpdateWidget` method is to allow the widget to respond to changes in its configuration. In particular, it provides an opportunity for the widget to update its state in response to changes in its properties. This can be useful, for example, if the widget needs to re-fetch data from a network service or rebuild its child widgets in response to a change in its configuration.
+
+```dart
+class MyWidget extends StatefulWidget {
+  final String data;
+
+  MyWidget({required this.data});
+
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  String _data = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _data = widget.data;
+  }
+
+  @override
+  void didUpdateWidget(covariant MyWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.data != oldWidget.data) {
+      setState(() {
+        _data = widget.data;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(_data);
+  }
+}
+```
+
+In this example, we define a `StatefulWidget` called `MyWidget` that takes a data parameter in its constructor. We use the `didUpdateWidget` method to update the widget's state (i.e., the `_data` variable) when the data parameter changes. When the widget is built, it displays the current value of `_data` using a `Text` widget.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-didupdatewidget-method-in-a-statefulwidget/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-didupdatewidget-method-in-a-statefulwidget/en-US.mdx)
+
+<br>
+      
+### What is a `CustomPainter` in Flutter?
+      
+<!-- Update here: /questions/what-is-a-custompainter-in-flutter/en-US.mdx -->
+
+In Flutter, a `CustomPainter` is a class that allows to create custom graphics and animations by painting on a Canvas. It is used in conjunction with a `CustomPaint` widget to create custom visuals that can be added to a widget tree.
+
+To use `CustomPainter`, we need to create a class that extends `CustomPainter` and implements the `paint` and `shouldRepaint` methods. The `paint` method is where we define what to draw on the canvas, while the `shouldRepaint` method is used to determine whether to repaint the canvas when the widget is updated.
+
+```dart
+// Custom Painter
+class RectanglePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = Colors.blue
+      ..style = PaintingStyle.fill;
+    final rect = Rect.fromLTWH(0, 0, size.width, size.height);
+    canvas.drawRect(rect, paint);
+  }
+
+  @override
+  bool shouldRepaint(RectanglePainter oldDelegate) => false;
+}
+
+// How to use the CustomPainter using CustomPaint widget
+CustomPaint(
+  painter: RectanglePainter(),
+  size: Size(200, 200), // defines the sixe of the canvas
+),
+```
+
+<!-- Update here: /questions/what-is-a-custompainter-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-a-custompainter-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `AnimatedBuilder` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-animatedbuilder-widget-in-flutter/en-US.mdx -->
+
+The `AnimatedBuilder` widget in Flutter is used to create complex animations by separating the animation logic from the widget tree. It provides a builder function that returns a widget tree, and an animation object that can be used to animate the properties of the widgets in the tree.
+
+Here's a simple code example that demonstrates how to use `AnimatedBuilder`:
+
+```dart
+class MyWidget extends StatefulWidget {...
+
+class _MyWidgetState extends State<MyWidget> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 1),
+      vsync: this,
+    );
+    _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    _controller.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Opacity(
+          opacity: _animation.value,
+          child: Container( ... ),
+        );
+      },
+    );
+  }
+}
+```
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-animatedbuilder-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-animatedbuilder-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `Navigator` class in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-navigator-class-in-flutter/en-US.mdx -->
+
+In Flutter, the `Navigator` class is used to manage a stack of pages or routes in an app. It provides methods to push and pop routes onto and off of the stack, allowing the user to navigate between different screens or views within the app.
+
+Here are some of the key features and use cases of the `Navigator` class in Flutter:
+
+1. The `Navigator` class provides methods to push and pop routes onto and off of the stack. When a route is pushed onto the stack, it becomes the topmost route and is displayed on the screen. When a route is popped off the stack, the previous route becomes the topmost route and is displayed on the screen.
+2. The `Navigator` class provides a way to pass data between routes using the push method's arguments parameter.
+3. The `Navigator` class allows to manage the navigation history by controlling which routes are pushed onto and popped off of the stack.
+4. The `Navigator` class provides options to customize the transition animation when navigating between routes, such as sliding, fading, or scaling the new route into view.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-navigator-class-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-navigator-class-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `AnimatedSwitcher` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-animatedswitcher-widget-in-flutter/en-US.mdx -->
+
+The `AnimatedSwitcher` widget in Flutter is used to create animated transitions between two or more widgets. The purpose of the `AnimatedSwitcher` widget is to provide an easy-to-use way to animate changes in the widget tree. When you use the `AnimatedSwitcher`, you can specify a new child widget to be displayed, and the `AnimatedSwitcher` will animate the transition between the old and new widgets using a customizable animation.
+
+The `AnimatedSwitcher` widget has several properties that can be used to customize the animation, including the duration of the animation, the type of animation, and whether or not to fade the widgets in and out.
+
+Some common use cases for the `AnimatedSwitcher` widget include:
+
+- Swapping out one widget for another in response to user input
+- Animating changes to a list of items, such as adding or removing items
+- Creating smooth transitions between screens or pages in a multi-page app
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-animatedswitcher-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-animatedswitcher-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the `FittedBox` widget in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-fittedbox-widget-in-flutter/en-US.mdx -->
+
+The `FittedBox` widget in Flutter is used to automatically scale and position its child within its own bounds. The purpose of the `FittedBox` widget is to provide an easy-to-use way to adjust the size and position of a child widget to fit within its parent widget. When using the `FittedBox`, we can specify a child widget that is larger or smaller than its parent, and the `FittedBox` will automatically scale and position the child widget to fit within the parent widget's bounds.
+
+The `FittedBox` widget has several properties that can be used to customize the scaling behavior, including the fit property which determines how the child widget should be scaled, and the alignment property which determines where the child widget should be positioned within the parent widget.
+
+Some common use cases for the `FittedBox` widget include:
+
+- Scaling and centering an image within a container widget
+- Scaling and positioning text within a layout to fit within available space
+- Scaling and positioning UI elements to fit within different screen sizes.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-fittedbox-widget-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-fittedbox-widget-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is State Management in Flutter?
+      
+<!-- Update here: /questions/what-is-state-management-in-flutter/en-US.mdx -->
+
+State management in Flutter refers to the management of the state of widgets and their properties in a Flutter app. State management is an essential concept in Flutter because it allows developers to create dynamic and interactive user interfaces that respond to user input and changes in data.
+
+In Flutter, widgets can be either stateful or stateless. Stateless widgets are widgets that do not change over time, whereas stateful widgets are widgets that can change their properties and appearance over time.
+
+State management in Flutter involves managing the state of stateful widgets, which can be done using various techniques and design patterns, such as:
+
+- **StatefulWidget and State**: This is the most basic and straightforward way to manage the state of a widget in Flutter. In this approach, a widget is split into two classes: `StatefulWidget` and `State`. The `StatefulWidget` is responsible for creating the `State` object, and the `State` object is responsible for managing the state of the widget.
+
+- **InheritedWidget and InheritedModel**: These are two classes that allow the sharing of data between widgets in a Flutter app. `InheritedWidget` and `InheritedModel` can be used to manage the state of a widget by passing data down the widget tree.
+
+- **Provider**: This is a third-party library that simplifies state management in Flutter. `Provider` uses `InheritedWidget` under the hood and provides a simple and easy-to-use API for managing the state of a widget.
+
+- **BLoC (Business Logic Component) pattern**: This is a design pattern that separates the business logic and presentation layers of an app. BLoC can be used for state management by creating a stream of events that represent changes to the state of the widget.
+
+<!-- Update here: /questions/what-is-state-management-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-state-management-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the difference between Cupertino and Material Design in Flutter?
+      
+<!-- Update here: /questions/what-is-the-difference-between-cupertino-and-material-design-in-flutter/en-US.mdx -->
+
+Cupertino and Material Design are two design languages used in Flutter for building iOS and Android apps, respectively. While both design languages follow different design principles and have unique features, they share some similarities as well.
+
+Here are some of the main differences between Cupertino and Material Design in Flutter:
+
+1. **Visual Design**: Cupertino design is characterized by its use of translucency, minimalism, and flat design, whereas Material Design uses bold typography, bright colors, and depth effects to create a layered look.
+
+2. **Navigation and Layout**: Cupertino design uses a bottom navigation bar for app navigation and has a more top-down layout approach, while Material Design uses a drawer for navigation and has a left-to-right layout approach.
+
+3. **Widgets**: Cupertino and Material Design have different sets of widgets that reflect their design language. For example, Cupertino widgets have a more minimalist look, with more whitespace and fewer borders, whereas Material Design widgets are more vibrant, with bright colors and more pronounced borders.
+
+4. **Iconography**: The icons used in Cupertino and Material Design are also different. Cupertino icons have a more minimalist design, with fewer details and a more stylized look, whereas Material Design icons are more detailed and three-dimensional.
+
+Despite these differences, both design languages share some commonalities in the way they implement responsive design and use animations to enhance the user experience. Flutter allows developers to easily switch between Cupertino and Material Design widgets and design principles, making it possible to create apps that have a consistent look and feel across both iOS and Android platforms.
+
+<!-- Update here: /questions/what-is-the-difference-between-cupertino-and-material-design-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-difference-between-cupertino-and-material-design-in-flutter/en-US.mdx)
+
+<br>
+      
+### What is the purpose of the Material Design Icons package in Flutter?
+      
+<!-- Update here: /questions/what-is-the-purpose-of-the-material-design-icons-package-in-flutter/en-US.mdx -->
+
+The Material Design Icons package in Flutter provides a set of icons that follow the Material Design guidelines for iconography. These icons are designed to be simple, easy to recognize, and scalable, making them ideal for use in mobile apps and web applications.
+
+The Material Design Icons package contains over 4,000 icons that cover a wide range of categories, including action icons, alert icons, communication icons, content icons, device icons, editor icons, file icons, hardware icons, image icons, maps icons, navigation icons, notification icons, places icons, social icons, toggle icons, and more.
+
+To use  Material Design Icons, first we need to add the package as a dependency to your Flutter project. Then, we can use any of the icons in the app by importing the `MaterialIcons` class and referencing the icon by name.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My App'),
+      ),
+      body: Center(
+        child: Icon(MdiIcons.home),
+      ),
+    );
+  }
+}
+```
+
+Overall, the Material Design Icons package is a useful resource for Flutter developers, as it provides a large set of high-quality icons that can be used to enhance the user experience of their apps.
+
+<!-- Update here: /questions/what-is-the-purpose-of-the-material-design-icons-package-in-flutter/en-US.mdx -->
+
+<br>
+
+[Back to top ↑](#table-of-contents) &nbsp;&nbsp;/&nbsp;&nbsp; [🖌️ Edit answer](https://github.com/thisissandipp/flutter-interview-questions/edit/main/questions/what-is-the-purpose-of-the-material-design-icons-package-in-flutter/en-US.mdx)
+
+<br>
+      
 
 <!-- QUESTIONS:ALL:END -->
 
@@ -1439,6 +2344,24 @@ Flutter Interview Questions categorized by difficulty.
 19. [What is an `AspectRatio` widget used for?](#what-is-an-aspectratio-widget-used-for)
 20. [What is `assert` used for in Dart and Flutter?](#what-is-assert-used-for-in-dart-and-flutter)
 21. [How would you make HTTP requests in the Flutter framework?](#how-would-you-make-http-requests-in-the-flutter-framework)
+22. [What technology is Flutter built with?](#what-technology-is-flutter-built-with)
+23. [What is the purpose of the `initState()` method in a StatefulWidget?](#what-is-the-purpose-of-the-initstate-method-in-a-statefulwidget)
+24. [What is the purpose of the `dispose()` method in a StatefulWidget?](#what-is-the-purpose-of-the-dispose-method-in-a-statefulwidget)
+25. [What is the difference between padding and margin in Flutter?](#what-is-the-difference-between-padding-and-margin-in-flutter)
+26. [What is the purpose of the scaffold widget in Flutter?](#what-is-the-purpose-of-the-scaffold-widget-in-flutter)
+27. [What is the purpose of the Expanded widget in Flutter?](#what-is-the-purpose-of-the-expanded-widget-in-flutter)
+28. [What is the purpose of the `SingleChildScrollView` widget in Flutter?](#what-is-the-purpose-of-the-singlechildscrollview-widget-in-flutter)
+29. [What is the purpose of the `Stack` widget in Flutter?](#what-is-the-purpose-of-the-stack-widget-in-flutter)
+30. [What is a `Theme` in Flutter?](#what-is-a-theme-in-flutter)
+31. [What is the purpose of the `Visibility` widget in Flutter?](#what-is-the-purpose-of-the-visibility-widget-in-flutter)
+32. [How do you navigate between screens in Flutter?](#how-do-you-navigate-between-screens-in-flutter)
+33. [What is a modal bottom sheet in Flutter?](#what-is-a-modal-bottom-sheet-in-flutter)
+34. [How do you use the `Positioned` widget in Flutter?](#how-do-you-use-the-positioned-widget-in-flutter)
+35. [How do you pass data between screens in Flutter?](#how-do-you-pass-data-between-screens-in-flutter)
+36. [What is the purpose of the `Navigator` class in Flutter?](#what-is-the-purpose-of-the-navigator-class-in-flutter)
+37. [What is the purpose of the `FittedBox` widget in Flutter?](#what-is-the-purpose-of-the-fittedbox-widget-in-flutter)
+38. [What is the difference between Cupertino and Material Design in Flutter?](#what-is-the-difference-between-cupertino-and-material-design-in-flutter)
+39. [What is the purpose of the Material Design Icons package in Flutter?](#what-is-the-purpose-of-the-material-design-icons-package-in-flutter)
 
 <!-- QUESTIONS:EASY:END -->
 
@@ -1459,7 +2382,7 @@ Flutter Interview Questions categorized by difficulty.
 11. [What is `AppLifecycleState`?](#what-is-applifecyclestate)
 12. [What is the difference between `NetworkImage` and `Image.network` in flutter?](#what-is-the-difference-between-networkimage-and-imagenetwork-in-flutter)
 13. [Explain async, await and Future.](#explain-async-await-and-future)
-14. [What is Flutter?](#what-is-resizetoavoidbottominset-when-should-we-use-it)
+14. [What is `resizeToAvoidBottomInset`? When should we use it?](#what-is-resizetoavoidbottominset-when-should-we-use-it)
 15. [What is `Animation` and `AnimationController`?](#what-is-animation-and-animationcontroller)
 16. [Differentiate between `Stream` and `Future` in Flutter.](#differentiate-between-stream-and-future-in-flutter)
 17. [Can you explain the process of creating custom widgets in Flutter?](#can-you-explain-the-process-of-creating-custom-widgets-in-flutter)
@@ -1469,6 +2392,17 @@ Flutter Interview Questions categorized by difficulty.
 21. [What are DevTools in Flutter?](#what-are-devtools-in-flutter)
 22. [What is Factory constructor?](#what-is-factory-constructor)
 23. [Explain singleton class in flutter.](#explain-singleton-class-in-flutter)
+24. [What is the event loop?](#what-is-the-event-loop)
+25. [What is the difference between Provider vs. InheritedWidget?](#what-is-the-difference-between-provider-vs-inheritedwidget)
+26. [What is a GlobalKey in Flutter?](#what-is-a-globalkey-in-flutter)
+27. [How do you handle user input in Flutter?](#how-do-you-handle-user-input-in-flutter)
+28. [What is the purpose of the `LayoutBuilder` widget in Flutter?](#what-is-the-purpose-of-the-layoutbuilder-widget-in-flutter)
+29. [How do you use the `ValueNotifier` class in Flutter?](#how-do-you-use-the-valuenotifier-class-in-flutter)
+30. [What is a `MediaQuery` in Flutter?](#what-is-a-mediaquery-in-flutter)
+31. [What is the purpose of the `didUpdateWidget` method in a StatefulWidget?](#what-is-the-purpose-of-the-didupdatewidget-method-in-a-statefulwidget)
+32. [What is the purpose of the `AnimatedBuilder` widget in Flutter?](#what-is-the-purpose-of-the-animatedbuilder-widget-in-flutter)
+33. [What is the purpose of the `AnimatedSwitcher` widget in Flutter?](#what-is-the-purpose-of-the-animatedswitcher-widget-in-flutter)
+34. [What is State Management in Flutter?](#what-is-state-management-in-flutter)
 
 <!-- QUESTIONS:INTERMEDIATE:END -->
 
@@ -1482,6 +2416,7 @@ Flutter Interview Questions categorized by difficulty.
 4. [What is `vsync`? Explain.](#what-is-vsync-explain)
 5. [What is isolate in Flutter?](#what-is-isolate-in-flutter)
 6. [Can you explain the process of testing a Flutter app?](#can-you-explain-the-process-of-testing-a-flutter-app)
+7. [What is a `CustomPainter` in Flutter?](#what-is-a-custompainter-in-flutter)
 
 <!-- QUESTIONS:ADVANCED:END -->
 

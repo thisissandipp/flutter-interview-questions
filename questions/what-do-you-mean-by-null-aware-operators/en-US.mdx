@@ -1,0 +1,40 @@
+---
+title: What do you mean by Null-aware operators?
+---
+
+Null aware operator allows us to make computations based on whether or not a value is null.
+
+Example of null-aware operators are:
+
+- **Optional Chaining Operator (?.):**
+
+  We use ?. when we want to call a method/getter on an object if and only if that object is not null (otherwise, return null).
+
+  ```dart
+  String? name = user?.name;
+
+  // This code is same as
+  // String? name = (user == null) ? null : user.name;
+  ```
+
+- **Default Operator (??):**
+
+  We use ?? when you want to evaluate and return an expression if another expression resolves to null. It is also called the **if-null operator** and **coalescing operator**. The null-aware operator is ??, which returns the expression on its left unless that expression’s value is null. In which case it’s null it returns the expression on its right.
+
+  ```dart
+  String? hello;
+  String? greeting = hello ?? 'Hey';
+
+  // This code is same as
+  // String? greeting = (hello == null) ? 'Hey' : hello;
+  ```
+
+- **Logical Nullish Assignment (??=):**
+
+  We use ??= when we want to assign a value to an object if that object is null. Otherwise, it returns the object.
+
+  ```dart
+  int? x;
+  x ??= 3;  // Assigns 3 to the variable `x`
+  x ??= 5;  // As x is not null now, it's value is still 3
+  ```

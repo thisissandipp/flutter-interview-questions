@@ -1,0 +1,29 @@
+---
+title: How would you make HTTP requests in the Flutter framework?
+---
+
+Making HTTP requests in Flutter can be done using the `http` package. This package provides a simple API for sending HTTP requests and receiving HTTP responses.
+
+Here is an example of how to make a GET request to retrieve data from an API:
+
+```dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<void> fetchData() async {
+  final response = await http.get('https://jsonplaceholder.typicode.com/posts');
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response, then parse the JSON
+    final data = json.decode(response.body);
+    print(data);
+  } else {
+    // If the server did not return a 200 OK response, then throw an exception
+    throw Exception('Failed to load data');
+  }
+}
+```
+
+In this example, we use the `http.get` method to send a GET request to the specified URL. The `await` keyword is used to wait for the response before continuing. If the response has a status code of 200, we parse the JSON data using the `json.decode` method. If the status code is not 200, we throw an exception.
+
+The `http` package is a simple and powerful tool for making HTTP requests in Flutter, and it can be used for a variety of tasks, including retrieving data from APIs, submitting form data, and uploading files.

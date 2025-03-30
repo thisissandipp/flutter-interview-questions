@@ -1,0 +1,21 @@
+---
+title: What is Typedef in Dart?
+---
+
+The `typedef` in Dart is a way to define a new type alias for a function type. It allows us to give a name to a function type and use that name to declare variables, function parameters, or return types. A `typedef` is useful when we want to refer to a complex function type multiple times in our code, as it makes our code more readable and reduces duplication.
+
+Here's an example of using `typedef` in Dart:
+
+```dart
+typedef IntCallback = void Function(int value);
+
+void callBackMethod(IntCallback callback) {
+  callback(42);
+}
+
+void main() {
+  callBackMethod((value) => print(value));
+}
+```
+
+In this example, the `IntCallback` typedef defines a function type that takes an int as a parameter and returns void. The `callBackMethod` function takes an `IntCallback` as a parameter and calls it. The main function uses a closure to define an implementation of `IntCallback` and passes it to the `callBackMethod` function.

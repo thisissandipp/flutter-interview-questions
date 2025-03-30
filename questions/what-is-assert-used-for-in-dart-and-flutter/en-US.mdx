@@ -1,0 +1,24 @@
+---
+title: What is `assert` used for in Dart and Flutter?
+---
+
+The `assert` is a statement in Dart and Flutter that checks if a boolean condition is true and triggers an exception if the condition is false. It is typically used for debugging purposes, as it is intended to be used in development only and will be ignored in a production environment.
+
+An `assert` statement takes the following form:
+
+```
+assert(condition);
+```
+
+where `condition` is the boolean expression to be evaluated. If `condition` is `true`, the `assert` statement does nothing. However, if `condition` is `false`, the `assert` statement throws an `AssertionError` with a message indicating that the condition failed.
+
+Here's an example of using an `assert` statement to check if a variable has a certain value:
+
+```dart
+int score = 50;
+assert(score >= 60, "Score must be at least 60");
+```
+
+In this example, if `score` is less than 60, the `assert` statement will throw an `AssertionError` with the message `Score must be at least 60`.
+
+In summary, `assert` is used in Dart and Flutter to validate conditions during development and help catch potential bugs before they make it to production.

@@ -1,0 +1,13 @@
+---
+title: What is `AppLifecycleState`?
+---
+
+The `AppLifecycleState` defines the state that an application can be.
+
+- **detached (AppLifecycleState.detached):** This means the application is still hosted on flutter engine but is detached from any host views. It can either be in the progress of attaching a view when engine was first initializes, or after the view being destroyed due to a Navigator pop.
+
+- **inactive (AppLifecycleState.inactive):** This means the application is in an inactive state and is not receiving user input. Simply we can say the app is in the foreground and not running in the background on your mobile phone.
+
+- **paused (AppLifecycleState.paused):** This means the application is not currently visible to the user, not responding to user input, and running in the background.
+
+- **resumed (AppLifecycleState.resumed):** This means the application is visible and responding to user input.

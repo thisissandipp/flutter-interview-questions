@@ -1,0 +1,24 @@
+---
+title: What is isolate in Flutter?
+---
+
+An `Isolate` in Flutter is a separate thread of execution that runs concurrently with the main isolate (thread) of a Flutter application. An isolate has its own memory heap, so it can run code and access data independently of the main isolate. This allows you to run CPU-intensive or blocking operations on a background isolate, so that they don't block the main UI thread.
+
+An isolate can be created using the `Isolate.spawn` method. This method takes a callback function that runs in the new isolate. The callback function receives a `SendPort` as an argument, which can be used to send messages to and receive messages from the main isolate.
+
+Here's an example of how to create an isolate in Flutter:
+
+```dart
+import 'dart:isolate';
+
+void backgroundTask(SendPort sendPort) {
+  // Code that runs in the background isolate
+}
+
+void main() {
+  final receivePort = ReceivePort();
+  Isolate.spawn(backgroundTask, receivePort.sendPort);
+}
+```
+
+In this example, the `backgroundTask` function runs in the background isolate. The main function creates the isolate and passes a `SendPort` to the `backgroundTask` function, which can be used to communicate with the main isolate.

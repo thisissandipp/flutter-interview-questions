@@ -1,0 +1,7 @@
+---
+title: What is the difference between `NetworkImage` and `Image.network` in flutter?
+---
+
+`NetworkImage` class creates an object that provides an image from the src URL passed to it. It is not a widget and does not output an image to the screen.
+
+`Image.network` creates a widget that displays an image on the screen. It is just a named constructor on the **Image** class. It sets the image property using the **NetworkImage** . This image property is then used to display the image.

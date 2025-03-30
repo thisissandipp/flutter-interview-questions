@@ -1,0 +1,9 @@
+---
+title: What is the difference between `Container` and `SizedBox` widget?
+---
+
+**SizedBox** is a widget for giving some constant height or width between two widgets. It does not contain any decorative properties just like color, shape, borderRadius etc.
+
+On the other hand **Container** is a widget that any person can modify according to their needs.
+
+When used for whitespace, there is a linter warning to prefer SizedBox instead of Container. Because a Container is a heavier widget than a SizedBox, and as bonus, SizedBox has a const constructor, so it won't even create a new instance during runtime.

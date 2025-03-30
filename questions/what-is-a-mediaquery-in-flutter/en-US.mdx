@@ -1,0 +1,13 @@
+---
+title: What is a `MediaQuery` in Flutter?
+---
+
+In Flutter, a `MediaQuery` is a widget that provides information about the device's screen size, orientation, and other display-related characteristics. It is typically used to create responsive UIs that adapt to different screen sizes and densities.
+
+The `MediaQuery` widget is usually placed at the root of the widget tree, and it provides a `MediaQueryData` object that contains various properties related to the device's display, such as:
+
+- **Screen size**: `MediaQueryData.size` returns the size of the device's screen in logical pixels (i.e., independent of the device's pixel density).
+- **Screen orientation**: `MediaQueryData.orientation` returns the orientation of the device's screen (portrait or landscape).
+- **Pixel density**: `MediaQueryData.devicePixelRatio` returns the device's pixel density, which is the ratio between physical pixels and logical pixels.
+- **Text scaling factor**: `MediaQueryData.textScaleFactor` returns the user's preferred text scaling factor, which can be used to adjust the font size of text in the app.
+- **Platform**: `MediaQueryData.platformBrightness` returns the platform's preferred brightness mode (light or dark).

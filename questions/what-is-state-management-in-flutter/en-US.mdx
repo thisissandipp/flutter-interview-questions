@@ -1,0 +1,17 @@
+---
+title: What is State Management in Flutter?
+---
+
+State management in Flutter refers to the management of the state of widgets and their properties in a Flutter app. State management is an essential concept in Flutter because it allows developers to create dynamic and interactive user interfaces that respond to user input and changes in data.
+
+In Flutter, widgets can be either stateful or stateless. Stateless widgets are widgets that do not change over time, whereas stateful widgets are widgets that can change their properties and appearance over time.
+
+State management in Flutter involves managing the state of stateful widgets, which can be done using various techniques and design patterns, such as:
+
+- **StatefulWidget and State**: This is the most basic and straightforward way to manage the state of a widget in Flutter. In this approach, a widget is split into two classes: `StatefulWidget` and `State`. The `StatefulWidget` is responsible for creating the `State` object, and the `State` object is responsible for managing the state of the widget.
+
+- **InheritedWidget and InheritedModel**: These are two classes that allow the sharing of data between widgets in a Flutter app. `InheritedWidget` and `InheritedModel` can be used to manage the state of a widget by passing data down the widget tree.
+
+- **Provider**: This is a third-party library that simplifies state management in Flutter. `Provider` uses `InheritedWidget` under the hood and provides a simple and easy-to-use API for managing the state of a widget.
+
+- **BLoC (Business Logic Component) pattern**: This is a design pattern that separates the business logic and presentation layers of an app. BLoC can be used for state management by creating a stream of events that represent changes to the state of the widget.

@@ -1,0 +1,11 @@
+---
+title: What is the difference between Provider vs. InheritedWidget?
+---
+
+Provider and InheritedWidget are both ways to share data between widgets in Flutter, but they differ in their implementation and approach.
+
+InheritedWidget is a built-in widget in Flutter that allows the sharing of data between widgets in a tree structure. It works by creating a tree of widgets, where each widget can access data from its ancestor widget. This makes it easy to share data between widgets without the need for callback functions or prop drilling. InheritedWidget can be used for simple to moderately complex cases, but can become cumbersome to use for more complex use cases.
+
+Provider is a third-party package that provides an easy and efficient way to manage state in Flutter. It is built on top of InheritedWidget and offers a more declarative approach to managing state. Provider allows widgets to access data by declaring what data they need and then automatically rebuilding when the data changes. Provider is highly scalable and can be used for both simple and complex use cases.
+
+In summary, while both Provider and InheritedWidget can be used to share data between widgets, Provider offers a more declarative and scalable approach to managing state, while InheritedWidget is a built-in widget in Flutter that can be used for simple to moderately complex use cases.

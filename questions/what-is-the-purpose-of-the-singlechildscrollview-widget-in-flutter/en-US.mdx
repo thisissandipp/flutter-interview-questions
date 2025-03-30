@@ -1,0 +1,26 @@
+---
+title: What is the purpose of the `SingleChildScrollView` widget in Flutter?
+---
+
+The `SingleChildScrollView` widget in Flutter is used to make its child widget scrollable if it overflows the parent container.
+
+The purpose of `SingleChildScrollView` is to provide a way to display content that is larger than the available space. This widget is often used when a widget contains a large amount of content that doesn't fit on the screen, such as a long list of items, a large image, or a form with many input fields.
+
+By wrapping the child widget in a `SingleChildScrollView`, the user can scroll through the content to see all of it. The `SingleChildScrollView` widget takes up as much space as its child widget requires, and allows the child to be scrolled vertically or horizontally to view all of its content.
+
+Here's an example of using `SingleChildScrollView` to create a scrollable list:
+
+```dart
+SingleChildScrollView(
+  child: Column(
+    children: <Widget>[
+      ListTile(title: Text('Item 1')),
+      ListTile(title: Text('Item 2')),
+      ListTile(title: Text('Item 3')),
+      // Add more items here...
+    ],
+  ),
+);
+```
+
+In this example, the `SingleChildScrollView` wraps a `Column` widget containing several `ListTile` widgets. If the content of the `Column` is too large to fit on the screen, the user can scroll through it to see all of the items.

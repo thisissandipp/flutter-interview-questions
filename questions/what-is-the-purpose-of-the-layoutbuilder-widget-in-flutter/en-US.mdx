@@ -1,0 +1,25 @@
+---
+title: What is the purpose of the `LayoutBuilder` widget in Flutter?
+---
+
+The `LayoutBuilder` widget in Flutter is used to get the constraints of the parent widget and build child widgets based on these constraints.
+
+The purpose of `LayoutBuilder` is to enable creating responsive UIs that adapt to the size of their parent widget. The `LayoutBuilder` widget provides a callback that takes in the `BoxConstraints` of the parent widget, which represent the minimum and maximum width and height of the widget.
+
+These constraints can be used to build child widgets that fit within the available space. For example, the `MediaQuery.of(context).size` property can be used to to get the screen size, and then using the `LayoutBuilder` widget to create a child widget that adjusts its size based on the screen size.
+
+Here's an example of using LayoutBuilder to create a widget that adjusts its size based on the available space:
+
+```dart
+LayoutBuilder(
+  builder: (BuildContext context, BoxConstraints constraints) {
+    return Container(
+      width: constraints.maxWidth * 0.5,
+      height: constraints.maxHeight * 0.5,
+      child: Text('This widget will take up 50% of the available space'),
+    );
+  },
+);
+```
+
+In this example, the `Container` widget will take up 50% of the available width and height, based on the `BoxConstraints` provided by the `LayoutBuilder`. This allows the widget to adjust its size based on the available space, making it more responsive.

@@ -1,0 +1,20 @@
+---
+title: How do you navigate between screens in Flutter?
+---
+
+In Flutter, we can navigate between screens using the `Navigator` class. We can push a new screen onto the stack using the `push` method, and pop the current screen off the stack using the `pop` method. We can also use named routes to navigate between screens. To do this, we need to define a map of named routes in the `MaterialApp`, and then use the `Navigator.pushNamed` method to navigate to a specific named route.
+
+Here are the basic steps to navigate between screens in Flutter:
+
+1. Define the screens or pages as separate widgets, each with its own unique name and content.
+2. Use the `Navigator.push()` method to push a new Route onto the stack.
+   ```dart
+   Navigator.push(
+     context,
+     MaterialPageRoute(builder: (context) => SecondScreen()),
+   );
+   ```
+3. Now, to go back to the previous screen use the `Navigator.pop()` method.
+   ```dart
+   Navigator.pop(context),
+   ```

@@ -1,0 +1,23 @@
+---
+title: What is the purpose of the `Visibility` widget in Flutter?
+---
+
+In Flutter, the `Visibility` widget is used to control the visibility of a child widget based on a certain condition. The `Visibility` widget can be used to show or hide a widget dynamically, based on user interactions or other conditions.
+
+The `Visibility` widget has a visible property that determines whether its child is visible or not. If visible is set to true, the child is visible, and if it's set to false, the child is hidden.
+
+Here are some use cases for the `Visibility` widget:
+
+- Hiding/showing a widget based on a certain condition (e.g. a user's authentication status)
+- Hiding/showing a widget based on user interactions (e.g. a dropdown menu that appears when a button is pressed)
+- Animating the appearance/disappearance of a widget (e.g. fading in/out a widget when it appears/disappears)
+
+```dart
+Visibility(
+  visible: true, // currently visible, set to `false` to disappear 
+  child: Text(
+    'Hello, World!',
+    style: TextStyle(fontSize: 24),
+  ),
+),
+```

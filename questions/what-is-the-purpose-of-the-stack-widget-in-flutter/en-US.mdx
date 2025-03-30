@@ -1,0 +1,16 @@
+---
+title: What is the purpose of the `Stack` widget in Flutter?
+---
+
+In Flutter, the `Stack` widget is used to place widgets on top of each other in a specific order. It allows to position widgets at specific locations within the parent widget by using offsets or alignment.
+
+The main purpose of the `Stack` widget is to provide a way to overlay widgets on top of each other. For example, if we want to display a text label over an image, we can use a `Stack` widget to place the text label on top of the image.
+
+```dart
+Stack(
+  children: [
+    Image.network('https://picsum.photos/250?image=9'),
+    Center(child: Text('Hello, World!'),
+  ],
+),
+```

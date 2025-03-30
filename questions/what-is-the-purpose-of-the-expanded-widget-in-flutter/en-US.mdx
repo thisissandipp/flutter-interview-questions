@@ -1,0 +1,9 @@
+---
+title: What is the purpose of the Expanded widget in Flutter?
+---
+
+In Flutter, the `Expanded` widget is used to adjust the available space for a child widget of a `Row`, `Column`, or `Flex` widget, by dividing the remaining free space among the children.
+
+When an `Expanded` widget is used, the child widget of the Row, Column, or Flex takes up as much available space as possible in the direction of the `mainAxisSize` property of the parent widget. This means that if the parent widget is a Row, the Expanded widget expands the child widget horizontally, and if the parent is a Column, the Expanded widget expands the child widget vertically.
+
+If there is more than one Expanded widget in the same Row, Column, or Flex, the available space is divided among the children based on their `flex` property, which determines the proportion of the remaining free space that each child should occupy.

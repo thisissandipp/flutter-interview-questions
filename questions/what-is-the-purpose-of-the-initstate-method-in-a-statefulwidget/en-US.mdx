@@ -1,0 +1,9 @@
+---
+title: What is the purpose of the `initState()` method in a StatefulWidget?
+---
+
+The `initState()` method is a lifecycle method in the `StatefulWidget` class of the Flutter framework. It is called once when the stateful widget is first inserted into the widget tree and it is used to initialize the state of the widget.
+
+In the `initState()` method, we can perform one-time initialization tasks, such as setting default values for your widget's state or initializing any controllers that the widget might use. It is important to note that the `initState()` method is only called once during the lifetime of a `StatefulWidget`. After the `initState()` method is called, subsequent updates to the widget's state will not cause the `initState()` method to be called again.
+
+Overall, the `initState()` method provides a way to set up the initial state of the widget and perform any necessary initialization tasks.

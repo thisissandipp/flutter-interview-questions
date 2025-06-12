@@ -171,7 +171,7 @@ The pubspec file specifies dependencies that the project requires, such as parti
 
 The `main()` function tells Dart where the program starts, and it must be in the file that is considered the "entry point" for the program. By convention, this will be in a file called `main.dart`. This main function can execute any code within it's code block.
 
-The `runApp()` function should return widget that would be attached to the screen as a root of the widget tree that will be rendered.
+The `runApp()` function takes (as parameter) widget that would be attached to the screen as a root of the widget tree that will be rendered.
 
 <!-- Update here: /questions/what-is-the-difference-between-main-and-runapp-functions-in-flutter/en-US.mdx -->
 

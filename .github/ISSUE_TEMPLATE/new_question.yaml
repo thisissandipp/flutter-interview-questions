@@ -1,0 +1,33 @@
+name: New Question
+description: Propose a new Flutter interview question to be added to the repository.
+title: "question: "
+labels: [new question]
+assignees:
+  - thisissandipp
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: proposed-question
+    attributes:
+      label: Proposed Question
+      placeholder: Please write the question here.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-answer
+    attributes:
+      label: Proposed Answer
+      placeholder: If possible, provide a detailed answer, including any code snippets or explanations. This helps in drafting the final response.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/thisissandipp/flutter-interview-questions/blob/main/CODE_OF_CONDUCT.md).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

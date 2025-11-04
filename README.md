@@ -352,7 +352,7 @@ _To learn more, check [docs](https://docs.flutter.dev/testing/build-modes)._
 
 `WidgetsApp` is a convenient widget that wraps a number of widgets that are commonly required for an application. It also provides basic navigation.
 
-`MaterialApp` builds an application that uses the mterial design. It is built upon the `WidgetsApp` and contains some material-design specific functionality, such as **AnimatedTheme**. We certainly don't require `MaterialApp` every time when building a Flutter project. `CupertinoApp` gives iOS like look and feel, or we can even define our custom sets of widgets.
+`MaterialApp` builds an application that uses the material design. It is built upon the `WidgetsApp` and contains some material-design specific functionality, such as **AnimatedTheme**. We certainly don't require `MaterialApp` every time when building a Flutter project. `CupertinoApp` gives iOS like look and feel, or we can even define our custom sets of widgets.
 
 <!-- Update here: /questions/what-is-the-difference-between-widgetsapp-and-materialapp-in-flutter/en-US.mdx -->
 
